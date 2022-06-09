@@ -1,0 +1,15 @@
+.slideshow {
+  width: 100vw;
+  border: none;
+  padding: none;
+  /* border: 1px solid black; */
+}
+.card {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 50vw;
+  border: 0;
+  overflow: hidden;
+  /* border:1px solid black; */
+}

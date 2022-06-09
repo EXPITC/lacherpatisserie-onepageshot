@@ -1,0 +1,21 @@
+.info {
+  position: relative;
+  background-color: var(--button-background-color);
+  width: 100vw;
+  text-align: center;
+  top: 0;
+  margin: 0 auto;
+  height: fit-content;
+  overflow-wrap: initial;
+}
+.info > h1 {
+  margin: 0;
+  font-size: 16px;
+
+  font-weight: 300;
+  color: white;
+  padding: 22px 0 22px 0;
+
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
+    1px 1px 1px rgba(0, 0, 0, 0.5), -3px 1px 1px rgba(32, 14, 9, 0.13);
+}

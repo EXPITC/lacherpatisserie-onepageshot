@@ -1,70 +1,7 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--page-background);
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-@font-face {
-  font-family: Madera;
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src: url('https://fonts.shopifycdn.com/madera/madera_n4.e17965bbd83a45504d48bdac7a451fea80e72cde.woff2?h1=bGFjaGVycGF0aXNzZXJpZS5jb20&hmac=01cbeed8c2ba03991a4e7541120266bad1afbacf6c06de46623cc94422fbcf10')
-      format('woff2'),
-    url('https://fonts.shopifycdn.com/madera/madera_n4.39aeffde60c53239a999d346ef82a0a53474c07b.woff?h1=bGFjaGVycGF0aXNzZXJpZS5jb20&hmac=41bf76c402af919842f8695603e87ec0cbf4d1e4f45b35859f641eede3fb676b')
-      format('woff');
-}
-@font-face {
-  font-family: Madera;
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-  src: url('https://fonts.shopifycdn.com/madera/madera_n6.3885479355e411cd84cb17cdf54dc9737be27270.woff2?h1=bGFjaGVycGF0aXNzZXJpZS5jb20&hmac=90d641bf4f46a6e5d3771912ad2fedd123ae993ca3b2ee3ed1a2b399eea2e986')
-      format('woff2'),
-    url('https://fonts.shopifycdn.com/madera/madera_n6.5d47dd25802b036877dab6d9ac803b8b8228fa42.woff?h1=bGFjaGVycGF0aXNzZXJpZS5jb20&hmac=df253f5beee70b94ea063d9bec6ccfbb3a77ff352d87e5f14483c56c449ed9af')
-      format('woff');
-}
-@font-face {
-  font-family: Madera;
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  src: url('https://fonts.shopifycdn.com/madera/madera_n7.459763769e65d40c87eb9d954e9d178bd002c688.woff2?h1=bGFjaGVycGF0aXNzZXJpZS5jb20&hmac=e0220d14baa0784dac597dd2ab1b92b7ced897c450987237fe054cf1ad27252f')
-      format('woff2'),
-    url('https://fonts.shopifycdn.com/madera/madera_n7.bf8b39df1d6f71f20f12f31afd40e4fee8201409.woff?h1=bGFjaGVycGF0aXNzZXJpZS5jb20&hmac=5114f9351922e022805ce13cf465cb65eefc4b536d9ffc701d878ee18dc7ca35')
-      format('woff');
-}
-@font-face {
-  font-family: Madera;
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-  src: url('https://fonts.shopifycdn.com/madera/madera_i4.c1f74ab3666b8885cd8129cd3b168c3fdd3f3ae7.woff2?h1=bGFjaGVycGF0aXNzZXJpZS5jb20&hmac=900d2770bb4ed8a10200783f175bb35e5b71013fd05365a114a1f7e1ae534c57')
-      format('woff2'),
-    url('https://fonts.shopifycdn.com/madera/madera_i4.2209746153621d1efd460393e525ddb7f1e6a774.woff?h1=bGFjaGVycGF0aXNzZXJpZS5jb20&hmac=513509ef08699216562b2af451d47594ae2d429cc4fee672f2dfdd65811cdce3')
-      format('woff');
-}
-@font-face {
-  font-family: Madera;
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-  src: url('https://fonts.shopifycdn.com/madera/madera_i7.dd4e70368d69ec5229156e7306bc2ed94cc1da80.woff2?h1=bGFjaGVycGF0aXNzZXJpZS5jb20&hmac=ce2d8d1c939ceb77379ae0317325c2d7e18446239632f0d05ebfe81988cfe21e')
-      format('woff2'),
-    url('https://fonts.shopifycdn.com/madera/madera_i7.586b8be4eef502c6dd734ac76f533f484d7bf38d.woff?h1=bGFjaGVycGF0aXNzZXJpZS5jb20&hmac=7a5f2eb72851567c8274a38b8291e2da843f7a2567014d0af70e0a6b08b05a4b')
-      format('woff');
-}
-
-:root {
-  --transition-default: 1s cubic-bezier(0.19, 1, 0.22, 1);
+import { createGlobalStyle } from "styled-components"
+const GlobalStyle = createGlobalStyle`
+ :root {
+  --transition-default: 1s  cubic-bezier(0.19, 1, 0.22, 1);
   --page-background: #ffffff;
   --color-primary: #242424;
   --disabled-color-primary: rgba(36, 36, 36, 0.5);
@@ -83,6 +20,7 @@ code {
   --header-background: #ffffff;
   --header-text: #242424;
   --header-border-color: rgba(36, 36, 36, 0.1);
+  --slideshow-border-color:#d9d9d9;
   --header-hover-background-color: rgba(36, 36, 36, 0.1);
   --header-overlay-text: #ffffff;
   --sticky-header-background: rgba(0, 0, 0, 0);
@@ -181,4 +119,6 @@ code {
   --password-btn-background-success: #4caf50;
   --success-color: #28a745;
   --error-color: #b94a48;
-}
+ }
+`
+export default GlobalStyle

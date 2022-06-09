@@ -1,0 +1,13 @@
+.header {
+  width: 100vw;
+  height: 160px;
+  border-bottom: 1px solid var(--sale-color);
+  background-color: var(--sale-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 4;
+  overflow-wrap: initial;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
