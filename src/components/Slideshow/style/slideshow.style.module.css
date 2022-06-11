@@ -2,6 +2,7 @@
   width: 100vw;
   border: none;
   padding: none;
+  overflow: hidden;
   /* border: 1px solid black; */
 }
 .card {

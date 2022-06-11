@@ -1,4 +1,20 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components';
+const size = {
+  mobileS: '320px',
+  mobileM: '375px',
+  tabletS: '600px',
+  tablet: '768px',
+  laptop: '1000px',
+  laptopM: '1200px',
+};
+export const device = {
+    mobileS: `(min-width: ${size.mobileS})`,
+    mobileM: `(max-width: ${size.mobileM})`,
+    tabletS: `(max-width: ${size.tabletS})`,
+    tablet: `(max-width: ${size.tablet})`,
+    laptop: `(max-width: ${size.laptop})`,
+    laptopM: `(max-width: ${size.laptopM})`,
+}
 const GlobalStyle = createGlobalStyle`
  :root {
   --transition-default: 1s  cubic-bezier(0.19, 1, 0.22, 1);
@@ -120,5 +136,5 @@ const GlobalStyle = createGlobalStyle`
   --success-color: #28a745;
   --error-color: #b94a48;
  }
-`
-export default GlobalStyle
+`;
+export default GlobalStyle;

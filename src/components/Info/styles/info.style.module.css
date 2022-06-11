@@ -7,6 +7,7 @@
   margin: 0 auto;
   height: fit-content;
   overflow-wrap: initial;
+  z-index: 999;
 }
 .info > h1 {
   margin: 0;

@@ -1,13 +1,10 @@
 import {
   faAward,
-  faCarCrash,
   faFaceSmile,
   faHeart,
-  faSmile,
   faTruck,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import style from './style/slideshow.style.module.css';
 import { MoreInfo, ProductInfo } from './style/slideshow.styled.components';

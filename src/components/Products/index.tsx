@@ -81,7 +81,7 @@ function Products() {
             </Link>
           </motion.div>
         </GridItem>
-        <GridItem>
+        <GridItem products={true}>
           <motion.div>
             <Link to='/ww'>
               <motion.img
@@ -95,7 +95,7 @@ function Products() {
             </Link>
           </motion.div>
         </GridItem>
-        <GridItem>
+        <GridItem products={true}>
           <motion.div>
             <Link to='/ww'>
               <motion.img
@@ -109,7 +109,7 @@ function Products() {
             </Link>
           </motion.div>
         </GridItem>
-        <GridItem>
+        <GridItem products={true}>
           <motion.div>
             <Link to='/ww'>
               <motion.img

@@ -8,6 +8,7 @@
   align-items: center;
   flex-grow: 4;
   overflow-wrap: initial;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+  /* overflow-y: visible; */
+  z-index: 999;
 }
