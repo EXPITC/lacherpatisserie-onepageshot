@@ -22,12 +22,13 @@
 .layer {
   width: 250px;
   height: 250px;
-  background-color: rgba(29, 29, 29, 0.1);
   margin: 0 auto;
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 999;
+  overflow: hidden;
 }
 .layer > h1 {
   font-size: smaller;
@@ -35,11 +36,6 @@
   font-family: Madera;
   font-style: italic;
   font-weight: lighter;
-}
-.layerII {
-    border: 1px solid salmon;
-    width: fit-content;
-    height: fit-content;
 }
 
 @media (max-width:1200px) {

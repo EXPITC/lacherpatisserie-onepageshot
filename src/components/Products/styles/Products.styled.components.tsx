@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { Link as link } from 'react-router-dom';
 import { device } from '../../../global.styled.components';
+import { motion } from 'framer-motion';
 const {tabletS, tablet, laptop, laptopM } = device;
 export const Link = styled(link)`
   color: inherit;
   text-decoration: inherit;
 `;
-export const GridContainer = styled.div`
+export const GridContainer = styled(motion.div)`
   display: grid;
   grid-template-columns: auto auto auto auto;
   max-width: 1250px;
@@ -26,15 +27,15 @@ export const GridContainer = styled.div`
   }
 `;
 
-export const GridItem = styled.div<{ products?: boolean }>`
+export const GridItem = styled(motion.div)<{ products?: boolean }>`
   width: 250px;
   max-height: 500px;
   min-height: 250px;
   height: fit-content;
   font-size: 30px;
   text-align: center;
-
   /* overflow: hidden; */
+
   @media ${laptopM} {
     width: 200px;
   }
@@ -53,9 +54,10 @@ export const GridItem = styled.div<{ products?: boolean }>`
   }
   & div {
     ${({ products }) =>
-      products ? 'border : 1px solid var(--button-background-color)' : null};
-    border-radius: 3px;
+    products ? 'border : 1px solid var(--button-background-color)' : null};
+    border-radius: 4px;
     height: ${({ products }) => (products ? '350px' : 'null')};
+
     @media ${laptopM} {
       height: ${({ products }) => (products ? '300px' : 'null')};
     }
@@ -70,6 +72,11 @@ export const GridItem = styled.div<{ products?: boolean }>`
     @media ${tabletS} {
         ${({ products }) => (products ? 'height: 38vw' : null)};
         ${({ products }) => (products ? 'margin-bottom: 50px;' : null)};
+    }
+
+    >h1 {
+      position: absolute;
+      z-index: 999;
     }
   }
   * {

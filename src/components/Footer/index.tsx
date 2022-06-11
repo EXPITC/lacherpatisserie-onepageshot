@@ -1,13 +1,10 @@
 import {
-  faFacebookSquare,
-  faGit,
   faGithub,
   faInstagramSquare,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import { faAngleRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
 import style from './style/footer.style.module.css';
 import {
   Container,
@@ -33,7 +30,7 @@ function Footer() {
           </Content>
           <Content>
             <h1>Follow Our Socials</h1>
-            <ContentWrapper content row gap='15px'>
+            <ContentWrapper content='true' row gap='15px'>
               <a href='https://twitter.com/LookItsMeTc'>
                 <FontAwesomeIcon icon={faTwitter} fontSize='22' />
               </a>
@@ -47,7 +44,7 @@ function Footer() {
           </Content>
           <Content>
             <h1>Quick Links</h1>
-            <ContentWrapper col content gap='15px'>
+            <ContentWrapper col content='true' gap='15px'>
               <a href='https://www.lacherpatisserie.com/collections/same-day-delivery'><p>Same Day Cake & Dessert Delivery</p></a>
               <a href='https://www.lacherpatisserie.com/pages/delivery'><p>Free Delivery to KL & Selangor (Min Amount Spend)</p></a>
               <a href='https://www.lacherpatisserie.com/pages/how-to-find-our-store'>

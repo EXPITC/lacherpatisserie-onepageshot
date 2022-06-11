@@ -13,43 +13,18 @@ import {
 } from './style/header.styled.components';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import {
+  allProductVariant,
+  deliveryVariant,
+  listEntryVariant,
+  listVariant,
+  navVariant,
+} from './style/variant/variant';
+
+// move props for animation
+let y = true;
 
 function Header() {
-  // delivery dropdown animation variant
-  const deliveryVariant = {
-    rest: {
-      y: -410,
-      borderRadius: '0 0 0 0',
-    },
-    hover: {
-      borderRadius: '0 0 10px 10px',
-      y: -65,
-      transition: {
-        type: 'spring',
-        else: 'anticipate',
-        stiffness: 70,
-        velocity: 2,
-      },
-    },
-  };
-  // all product dropdown animation variant
-  const allProductVariant = {
-    rest: {
-      y: -350,
-      borderRadius: '0 0 0 0',
-      width:'135px'
-    },
-    hover: {
-      borderRadius: '0 0 5px 5px',
-      y: -65,
-      transition: {
-        type: 'spring',
-        else: 'anticipate',
-        stiffness: 70,
-        velocity: 2,
-      },
-    },
-  };
   return (
     <header className={style.header}>
       <WrapperTop>
@@ -65,67 +40,116 @@ function Header() {
           </div>
         </PersonChart>
       </WrapperTop>
-      <List>
+
+      {/* bottom */}
+
+      <List
+        variants={listVariant}
+        initial={['rest', 'text']}
+        animate={['active', 'enter']}
+      >
         <li>
-          <Link to='/'>Home</Link>
+          <Link to='/'>
+            <motion.p variants={navVariant}>Home</motion.p>
+          </Link>
         </li>
         <li>
-          <a href='/'>Same Day Delivery</a>
+          <a href='/'>
+            <motion.p variants={navVariant}>Same Day Delivery</motion.p>
+          </a>
         </li>
         <li>
-          <a href='/'>1 Day Preorder</a>
+          <a href='/'>
+            <motion.p variants={navVariant}>1 Day Preorder </motion.p>
+          </a>
         </li>
         <li>
-          <motion.div initial='rest' whileHover='hover' animate='rest'>
-            <p>All Products</p>
-            <FontAwesomeIcon icon={faAngleDown} />
-            <DropDown variants={allProductVariant}>
-              <li>
-                <a href='/'>Whole Cake</a>
-              </li>
-              <li>
-                <a href='/'>Individual Dessert</a>
-              </li>
-              <li>
-                <a href='/'>Limited Edition</a>
-              </li>
-              <li>
-                <a href='/'>Add-Ons</a>
-              </li>
-            </DropDown>
-          </motion.div>
+          <motion.span variants={navVariant}>
+            <motion.div
+              initial={['rest', 'hidden']}
+              whileHover={['hover', 'visible']}
+            >
+              <p>All Products</p>
+              <FontAwesomeIcon icon={faAngleDown} />
+              <DropDown variants={allProductVariant} textcenter='true'>
+                <li>
+                  <motion.span variants={listEntryVariant()}>
+                    <a href='/'>Whole Cake</a>
+                  </motion.span>
+                </li>
+                <li>
+                  <motion.span variants={listEntryVariant(y)}>
+                    <a href='/'>
+                      Individual <br /> Dessert
+                    </a>
+                  </motion.span>
+                </li>
+                <li>
+                  <motion.span variants={listEntryVariant()}>
+                    <a href='/'>Limited Edition</a>
+                  </motion.span>
+                </li>
+                <li>
+                  <motion.span variants={listEntryVariant(y)}>
+                    <a href='/'>Add-Ons</a>
+                  </motion.span>
+                </li>
+              </DropDown>
+            </motion.div>
+          </motion.span>
         </li>
         <li>
-          <motion.div initial='rest' whileHover='hover' animate='rest'>
-            <p>Delivery Fee & FAQs</p>
-            <FontAwesomeIcon icon={faAngleDown} />
-            <DropDown variants={deliveryVariant}>
-              <li>
-                <a href='/'>Delivery Fee</a>
-              </li>
-              <li>
-                <a href='/'>FAQs</a>
-              </li>
-              <li>
-                <a href='/'>How To Choose The Flavour</a>
-              </li>
-              <li>
-                <a href='/'>Allergen and Diet Information</a>
-              </li>
-              <li>
-                <a href='/'>Our Store (For Pickup Only)</a>
-              </li>
-            </DropDown>
-          </motion.div>
+          <motion.span variants={navVariant}>
+            <motion.div
+              initial={['rest', 'hidden']}
+              whileHover={['hover', 'visible']}
+            >
+              <p>Delivery Fee & FAQs</p>
+              <FontAwesomeIcon icon={faAngleDown} />
+              <DropDown variants={deliveryVariant}>
+                <li>
+                  <motion.span variants={listEntryVariant()}>
+                    <a href='/'>Delivery Fee</a>
+                  </motion.span>
+                </li>
+                <li>
+                  <motion.span variants={listEntryVariant()}>
+                    <a href='/'>FAQs</a>
+                  </motion.span>
+                </li>
+                <li>
+                  <motion.span variants={listEntryVariant()}>
+                    <a href='/'>How To Choose The Flavour</a>
+                  </motion.span>
+                </li>
+                <li>
+                  <motion.span variants={listEntryVariant()}>
+                    <a href='/'>Allergen and Diet Information</a>
+                  </motion.span>
+                </li>
+                <li>
+                  <motion.span variants={listEntryVariant()}>
+                    <a href='/'>Our Store (For Pickup Only)</a>
+                  </motion.span>
+                </li>
+              </DropDown>
+            </motion.div>
+          </motion.span>
         </li>
         <li>
-          <a href='/'>Blogs</a>
+          <a href='/'>
+            <motion.p variants={navVariant}>Blogs</motion.p>
+          </a>
         </li>
         <li>
-          <a href='/'>About Us</a>
+          <a href='/'>
+            <motion.p variants={navVariant}>About Us</motion.p>
+          </a>
         </li>
         <li>
-          <a href='/'>Contact Us</a>
+          <a href='/'>
+            <motion.p variants={navVariant}>Contact Us</motion.p>
+          </a>
         </li>
       </List>
     </header>

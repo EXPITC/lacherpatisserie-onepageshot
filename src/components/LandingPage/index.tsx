@@ -16,7 +16,7 @@ function LandingPage() {
       <Products />
       <AboutAndReview />
       <Blog />
-      <Footer/>
+      <Footer />
       {/* <div>LandingPage</div> */}
     </div>
   );

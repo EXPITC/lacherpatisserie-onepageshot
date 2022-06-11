@@ -1,73 +1,92 @@
-import { motion } from 'framer-motion';
-import React from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import React, { useEffect } from 'react';
 import style from './styles/products.style.module.css';
 import {
   GridContainer,
   GridItem,
   Link,
 } from './styles/Products.styled.components';
+import {
+  coverVariant,
+  gridContainerVariant,
+  gridContentVariant,
+  imageVariant,
+  textVariant,
+} from './styles/variant/product.variant';
+
 function Products() {
+  const gridI = useAnimation();
+  const gridII = useAnimation();
   return (
     <section className={style.product}>
-      <GridContainer>
-        <GridItem>
-          <motion.div>
+      <GridContainer initial='rest' animate={gridI} onViewportEnter={()=>gridI.start('view')} variants={gridContainerVariant}>
+        <GridItem variants={gridContentVariant}>
+          <motion.div initial='rest' whileHover='hover'>
             <Link to='/ww'>
               <div className={style.layer}>
-                <h1>Whole Cake</h1>
+                <motion.img
+                  variants={imageVariant}
+
+                  src='https://cdn.shopify.com/s/files/1/0040/2305/8561/collections/whole-cake_600x.jpg'
+                  width='100%'
+                />
+                <motion.span variants={coverVariant} className={style.layer} />
+                <motion.h1 variants={textVariant}>Whole Cake</motion.h1>
               </div>
-              <motion.img
-                src='https://cdn.shopify.com/s/files/1/0040/2305/8561/collections/whole-cake_600x.jpg'
-                width='100%'
-              />
             </Link>
           </motion.div>
         </GridItem>
-        <GridItem>
-          <motion.div>
+        <GridItem variants={gridContentVariant}>
+          <motion.div initial='rest' whileHover='hover'>
             <Link to='/ww'>
               <div className={style.layer}>
-                <h1>Individual Desert</h1>
+                <motion.img
+                  variants={imageVariant}
+                  src='https://cdn.shopify.com/s/files/1/0040/2305/8561/collections/individual-dessert_600x.jpg'
+                  width='100%'
+                />
+                <motion.span variants={coverVariant} className={style.layer} />
+                <motion.h1 variants={textVariant}>Individual Desert</motion.h1>
               </div>
-              <motion.img
-                src='https://cdn.shopify.com/s/files/1/0040/2305/8561/collections/individual-dessert_600x.jpg'
-                width='100%'
-              />
             </Link>
           </motion.div>
         </GridItem>
-        <GridItem>
-          <motion.div>
+        <GridItem variants={gridContentVariant}>
+          <motion.div initial='rest' whileHover='hover'>
             <Link to='/ww'>
               <div className={style.layer}>
-                <h1>Limited Edition</h1>
-              </div>
-              <motion.img
+                <motion.img
+                  variants={imageVariant}
                 src='https://cdn.shopify.com/s/files/1/0040/2305/8561/collections/limited-edition_600x.jpg'
                 width='100%'
               />
+                <motion.span variants={coverVariant} className={style.layer} />
+                <motion.h1 variants={textVariant} >Limited Edition</motion.h1>
+              </div>
             </Link>
           </motion.div>
         </GridItem>
-        <GridItem>
-          <motion.div>
+        <GridItem variants={gridContentVariant}>
+          <motion.div initial='rest' whileHover='hover' >
             <Link to='/ww'>
               <div className={style.layer}>
-                <h1>Add-Ons</h1>
-              </div>
-              <motion.img
+                <motion.img
+                  variants={imageVariant}
                 src='https://cdn.shopify.com/s/files/1/0040/2305/8561/collections/add-ons_600x.jpg'
                 width='100%'
-              />
+                />
+              <motion.div variants={coverVariant} className={style.layer}></motion.div>
+                <motion.h1 variants={textVariant}>Add-Ons</motion.h1>
+              </div>
             </Link>
           </motion.div>
         </GridItem>
-          </GridContainer>
-          
-          <h1>Monthly Bestsellers</h1>
-          
-      <GridContainer>
-        <GridItem products={true}>
+      </GridContainer>
+
+      <h1>Monthly Bestsellers</h1>
+
+      <GridContainer initial='rest' animate={gridII} onViewportEnter={()=>gridII.start('view')} variants={gridContainerVariant} >
+        <GridItem products={true} variants={gridContentVariant}>
           <motion.div>
             <Link to='/ww'>
               <motion.img
@@ -81,7 +100,7 @@ function Products() {
             </Link>
           </motion.div>
         </GridItem>
-        <GridItem products={true}>
+        <GridItem products={true} variants={gridContentVariant}>
           <motion.div>
             <Link to='/ww'>
               <motion.img
@@ -95,7 +114,7 @@ function Products() {
             </Link>
           </motion.div>
         </GridItem>
-        <GridItem products={true}>
+        <GridItem products={true} variants={gridContentVariant}>
           <motion.div>
             <Link to='/ww'>
               <motion.img
@@ -109,7 +128,7 @@ function Products() {
             </Link>
           </motion.div>
         </GridItem>
-        <GridItem products={true}>
+        <GridItem products={true} variants={gridContentVariant}>
           <motion.div>
             <Link to='/ww'>
               <motion.img
@@ -129,3 +148,7 @@ function Products() {
 }
 
 export default Products;
+function useInView(): [any, any] {
+  throw new Error('Function not implemented.');
+}
+

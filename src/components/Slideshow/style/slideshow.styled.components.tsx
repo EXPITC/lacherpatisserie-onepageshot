@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-export const ProductInfo = styled.div`
+export const ProductInfo = styled(motion.div)`
   /* border:1px solid black; */
   position: relative;
   bottom: 200px;
