@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { device } from '../../../global.styled.components';
-const { tablet, tabletS} = device;
-export const Btn = styled(Link)`
+const { tablet, tabletS } = device;
+
+
+export const Btn = styled(motion.a)`
   color: black;
 `;
-export const ViewAll = styled(Link)`
+export const ViewAll = styled(motion.a)`
   color: var(--button-text-color);
   text-decoration: none;
   background-color: var(--color-scheme-light-text);

@@ -98,6 +98,7 @@ export const List = styled(motion.ul)`
 
 export const DropDown = styled(motion.ul)<{ textcenter?: String }>`
   position: absolute;
+  z-index: 1;
   margin: 0px;
   padding: 0px;
   /* width: fit-content; */

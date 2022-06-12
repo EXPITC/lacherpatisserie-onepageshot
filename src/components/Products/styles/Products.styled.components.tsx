@@ -35,7 +35,8 @@ export const GridItem = styled(motion.div)<{ products?: boolean }>`
   font-size: 30px;
   text-align: center;
   /* overflow: hidden; */
-
+  ${({products})=> products ? 'border:1px solid orange;' : null }
+  border-radius: 4px;
   @media ${laptopM} {
     width: 200px;
   }
@@ -46,6 +47,10 @@ export const GridItem = styled(motion.div)<{ products?: boolean }>`
   @media ${tablet} {
     max-width: 250px;
     width: 100vw;
+    ${({products})=> products? 'null' : `
+    max-height: 250px;
+    height: 100vh;`}
+    /* second variant */
     flex: 1 0 auto;
   }
   @media ${tabletS} {
@@ -93,6 +98,7 @@ export const GridItem = styled(motion.div)<{ products?: boolean }>`
   }
   * > img {
     top: 0;
+    width: ${({ products }) => products ? '95%': '100%'};
     ${({ products }) =>
       products ? 'border: 1px solid var(--button-background-color)' : null};
     border-radius: 4px;

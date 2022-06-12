@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { device } from '../../../global.styled.components';
+const { tablet, tabletS } = device;
 
 export const ProductInfo = styled(motion.div)`
   /* border:1px solid black; */
@@ -9,6 +11,10 @@ export const ProductInfo = styled(motion.div)`
   width: fit-content;
   height: 150px;
   color: var(--color-scheme-accent-text);
+  @media ${tabletS} {
+    max-width: 600px;
+    width: 100vw;
+  }
   > p {
     margin: 0;
     text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
@@ -21,8 +27,11 @@ export const ProductInfo = styled(motion.div)`
     margin: 5px 0 10px 0;
     text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
       1px 1px 1px rgba(0, 0, 0, 1), -3px 1px 1px rgba(32, 14, 9, 0.13);
+    @media ${tabletS} {
+      margin: 15px 15px 15px 0px;
+    }
   }
-  > button {
+  a > button {
     position: relative;
     height: 50px;
     width: 50%;
@@ -34,10 +43,11 @@ export const ProductInfo = styled(motion.div)`
     border: none;
     border-radius: 2px;
     text-overflow: clip;
+    cursor: pointer;
   }
 `;
 
-export const MoreInfo = styled.div`
+export const MoreInfo = styled(motion.div)`
   /* border: 1px solid black; */
   background-color: var(--color-scheme-light-background);
   width: 100vw;
@@ -48,6 +58,10 @@ export const MoreInfo = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transform: translateY(-20px);
+  @media ${tablet} {
+    height: 120px;
+  }
   > li {
     padding: 15px;
     max-width: 250px;
@@ -59,24 +73,30 @@ export const MoreInfo = styled.div`
     /* height: fit-content; */
     overflow-wrap: normal;
     list-style: none;
+    cursor: cursor;
     /* border: 1px solid black; */
-    cursor: pointer;
-    :nth-child(2){
-        border-left: 2px solid var(--slideshow-border-color);
-        border-right: 2px solid var(--slideshow-border-color);
+    :nth-child(2) {
+      border-left: 2px solid var(--slideshow-border-color);
+      border-right: 2px solid var(--slideshow-border-color);
     }
     :nth-child(3) {
-        border-right: 2px solid var(--slideshow-border-color);
-        
+      border-right: 2px solid var(--slideshow-border-color);
     }
-    * > div {
+    @media ${tablet} {
+      border-left: 2px solid var(--slideshow-border-color);
+      border-right: 2px solid var(--slideshow-border-color);
+      height: 50px;
+      max-width: 50vw;
+      width: 100%;
+      /* position: absolute; */
+    }
+    a > div {
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       max-width: 150px;
-
       margin-left: 20px;
       text-overflow: clip;
       /* border:1px solid orange; */
@@ -86,18 +106,18 @@ export const MoreInfo = styled.div`
         margin: 0 0 5px 0;
       }
       > p {
-          margin: 5px 0 0 0;
+        margin: 5px 0 0 0;
       }
     }
     > * {
-        color: inherit;
-        text-decoration: inherit;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        /* border:1px solid black; */
-        position: inherit;
+      color: inherit;
+      text-decoration: inherit;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      /* border:1px solid black; */
+      position: inherit;
     }
   }
 `;

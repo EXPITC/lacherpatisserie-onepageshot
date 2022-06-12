@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { device } from '../../../global.styled.components';
 const { laptop, tablet } = device;
@@ -5,7 +6,7 @@ const { laptop, tablet } = device;
 // --footer-background: #fff7b2;
 // --footer-text: #88694e;
 // --footer-hover-background-color:
-export const Copyright = styled.span`
+export const Copyright = styled(motion.span)`
   &:before {
     font-family: var(--button-font-family);
     font-size: 12px;
@@ -30,7 +31,7 @@ export const Container = styled.div`
   }
 `;
 
-export const ContentWrapper = styled.div<{
+export const ContentWrapper = styled(motion.div)<{
   col?: boolean;
   row?: boolean;
   content?: string;

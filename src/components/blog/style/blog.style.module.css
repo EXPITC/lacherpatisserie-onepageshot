@@ -6,6 +6,7 @@
     justify-content: center;
     height: fit-content;
     padding: 0  0 60px 0;
+    overflow: hidden;
 }
 .blog > h1 {
     margin: 60px;
