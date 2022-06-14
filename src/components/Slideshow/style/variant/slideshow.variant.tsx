@@ -88,26 +88,46 @@ export const moreContentIIVariant = ({ y }: { y?: Boolean }) => {
 export const moreContentTabletVariant = {
   leaveUp: {
     opacity: 0,
-    y: 100,
-    // display: 'hidden',
+    y: [0, -100],
+    transition: {
+      duration: 0.2,
+    },
     transitionEnd: {
       display: 'none',
     },
   },
   leaveDown: {
     opacity: 0,
-    y: -100,
-    // display: 'hidden',
+    y: [0,100],
+    transition: {
+      //   delay: 1,
+      duration: .2,
+    },
+
     transitionEnd: {
       display: 'none',
     },
   },
-  enter: {
+  enterBottom: {
+    transition: {
+      //   delay: 1,
+      //   delay: 5,
+    },
     opacity: 1,
-    y: 0,
+    y: [100, 0],
+    display: 'flex',
+  },
+  enterTop: {
+    transition: {
+      //   delay: 1,
+    },
+    opacity: 1,
+    y: [-100, 0],
     display: 'flex',
   },
   leave: {
-    display: 'none',
+    transitionEnd: {
+      display: 'none',
+    },
   },
 };

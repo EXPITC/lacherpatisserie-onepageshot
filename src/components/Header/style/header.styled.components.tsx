@@ -1,7 +1,8 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { device } from '../../../global.styled.components';
-const { laptopM, laptop } = device;
+const { laptopM } = device;
 // --header divide by two sector top & bottom
 
 // one section on top header including logo and person & chart
@@ -9,13 +10,13 @@ export const WrapperTop = styled.div`
   display: flex;
   align-items: center;
   flex: 3;
+  min-height: 80px;
   height: 80px;
   width: 100vw;
   justify-content: center;
   padding: 10px 0 10px 0;
   background-color: var(--header-background);
-  z-index: 999;
-  /* border: 1px solid black; */
+  z-index: 99;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   > img {
@@ -32,7 +33,8 @@ export const WrapperTop = styled.div`
 // person & chart on the left
 export const PersonChart = styled.div`
   position: absolute;
-  right: 25px;
+
+  right: 3%;
   & > * {
     transition: var(--transition-default);
     cursor: pointer;
@@ -40,7 +42,6 @@ export const PersonChart = styled.div`
       opacity: 0.6;
     }
   }
-
   & div {
     margin-left: 15px;
     display: inline;
@@ -49,17 +50,25 @@ export const PersonChart = styled.div`
     padding-left: 5px;
     display: inline;
   }
+  @media (max-width: 1010px) {
+    font-size: 20px;
+    & p,
+    > :first-child {
+      display: none;
+    }
+  }
 `;
 
 // list navigation at bottom
-export const List = styled(motion.ul)`
-  /* flex: 1; */
+export const List = styled(motion.ul)<{ laptop?: String }>`
+  flex: 1 0 auto;
   display: flex;
   margin: 0;
   padding: 0;
   justify-content: center;
   align-items: center;
   width: fit-content;
+  /* border:1px solid blue; */
   padding: 0;
   /* @media ${laptopM} {
   } */
@@ -70,6 +79,14 @@ export const List = styled(motion.ul)`
     @media ${laptopM} {
       width: fit-content;
       margin: 0 0.9vw;
+      /* border:1px solid red; */
+    }
+    @media (max-width: 1060px) {
+      /* border:1px solid blue; */
+      margin: 0 0.5vw;
+    }
+    @media (max-width: 1010px) {
+      ${({ laptop }) => (laptop ? 'display: none;' : null)}
     }
     position: relative;
     border-left: 1px solid var(--active-link-color);
@@ -145,6 +162,125 @@ export const DropDown = styled(motion.ul)<{ textcenter?: String }>`
       :hover {
         opacity: 0.5;
       }
+    }
+  }
+`;
+
+//mobile navigation
+export const BarMobile = styled(motion.span)`
+  position: absolute;
+  left: 30px;
+  top: 120px;
+  z-index: 999;
+`;
+
+export const NavMobile = styled.div`
+  background-color: var(--mobile-menu-background);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: inherit;
+  @media (min-width: 1011px) {
+    display: none;
+  }
+`;
+
+export const Panel = styled(motion.div)`
+  background-color: var(--sale-color);
+  flex: 1;
+  max-width: 40vw;
+  /* @media (){
+    
+  } */
+  /* overflow: scroll; */
+  /* scroll-behavior: smooth; */
+  > * {
+    margin: 0;
+    padding: 0;
+  }
+`;
+
+export const ListNavMobile = styled(motion.ul)`
+  padding-top: 40px;
+  margin: 0;
+  /* margin-top: 40px; */
+  align-items: center;
+  height: 100vh;
+  & li {
+    padding: 0 3vw 0 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    width: 35vw;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid var(--color-scheme-dark-background);
+    :first-child {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      > a {
+        list-style-type: none;
+      }
+    }
+    > a,
+    p {
+      /* 
+      --header-font-stack: Garamond, Baskerville, Caslon, serif;
+      --header-font-weight: 400;
+      --header-font-style: italic;
+      --header-font-transform: none;
+      --header-letter-spacing: normal;
+       */
+      display: list-item;
+      list-style: circle;
+      font-weight: var(--header-font-weight);
+      font-family: var(--header-font-stack);
+      text-decoration: none;
+      font-size: 20px;
+      color: var(--active-link-color);
+    }
+  }
+`;
+
+export const DropLeft = styled(motion.ul)`
+  background-color: var(--sale-color);
+  /* opacity: 0.5; */
+  top:0;
+  padding-top: 40px;
+  height: 100vh;
+  width: 40vw;
+  position: fixed;
+  & li {
+    padding: 0 3vw 0 2vw;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    width: 35vw;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid var(--color-scheme-dark-background);
+    :first-child {
+      justify-content: center;
+      > p {
+        margin-left: 10px;
+      }
+    }
+    > a,
+    p {
+      /* 
+      --header-font-stack: Garamond, Baskerville, Caslon, serif;
+      --header-font-weight: 400;
+      --header-font-style: italic;
+      --header-font-transform: none;
+      --header-letter-spacing: normal;
+       */
+      font-weight: var(--header-font-weight);
+      font-family: var(--header-font-stack);
+      text-decoration: none;
+      font-size: 20px;
+      color: var(--active-link-color);
     }
   }
 `;

@@ -1,5 +1,5 @@
 .header {
-  width: 100vw;
+  width: 100%;
   height: fit-content;
   border-bottom: 1px solid var(--sale-color);
   background-color: var(--sale-color);
@@ -10,4 +10,8 @@
   overflow-wrap: initial;
   z-index: 999;
 }
-
+@media (max-width:1010px) {
+  .header{
+    height: 100px;
+  }
+}

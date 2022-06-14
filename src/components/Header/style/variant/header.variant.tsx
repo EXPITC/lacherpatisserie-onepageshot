@@ -30,7 +30,7 @@ export const navVariant = {
     opacity: 1,
     x: [50, 0],
     transition: {
-      delay:.8,
+      delay: 0.8,
       duration: 0.5,
     },
   },
@@ -104,4 +104,64 @@ export const listEntryVariant = (y: boolean = false) => {
       },
     },
   };
+};
+
+export const barVariant = {
+  rest: {
+    rotate: 0,
+    left: 0,
+  },
+  open: {
+    rotate: 180,
+    left: '20px',
+    top: '55px',
+  },
+  close: {
+    rotate: -360,
+    left: 30,
+    top: '120px',
+  },
+  flip: {
+    rotateX: [0, 180],
+    duration: 0.1,
+  },
+};
+
+export const panelVariant = {
+  rest: {
+    width: 0,
+    opacity: 0,
+  },
+  open: {
+    opacity: 1,
+    width: '100vw',
+    transition: {
+      ease:[0.17, 0.67, 0.83, 0.67],
+      staggerChildren: 0.2,
+      delayChildren: 0.2,
+    },
+  },
+  close: {
+    width: 0,
+    transition: {
+      ease:[0.17, 0.67, 0.83, 0.67],
+      duration:0.22
+    }
+  },
+};
+
+export const dropLeftVariant = {
+  def: {
+    x: '100vw',
+    transition: {
+      duration:0.3
+    }
+  },
+  view: {
+    x: '0',
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.2,
+    },
+  },
 };

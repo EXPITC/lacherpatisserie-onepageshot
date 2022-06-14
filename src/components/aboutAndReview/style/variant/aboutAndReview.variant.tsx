@@ -29,48 +29,48 @@ export const cardVariant = {
     opacity: 1,
     scale: 1,
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.2,
+      staggerChildren: .1,
+      delayChildren: .1,
     },
   },
   II: {
     opacity: 1,
     scale: 1,
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.2,
+      staggerChildren: .1,
+      delayChildren: .1,
     },
   },
   III: {
     opacity: 1,
     scale: 1,
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.2,
+      staggerChildren: .1,
+      delayChildren: .1,
     },
   },
   IV: {
     opacity: 1,
     scale: 1,
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.2,
+      staggerChildren: .1,
+      delayChildren: .1,
     },
   },
   V: {
     opacity: 1,
     scale: 1,
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.2,
+      staggerChildren: .1,
+      delayChildren: .1,
     },
   },
   button: {
     opacity: 1,
     scale: 1,
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.2,
+      staggerChildren: .1,
+      delayChildren: .1,
     },
   },
 };
@@ -134,5 +134,77 @@ export const buttonVariant = {
   button: {
     opacity: 1,
     scale: 1,
+  },
+};
+
+// ----Review Section
+export const reviewVariant = {
+  viewReview: {
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+export const h1Variant = {
+  rest: {
+    opacity: 0,
+    y: -100,
+  },
+  viewH1: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'spring',
+      stiffness: 100,
+      duration: 1,
+    },
+  },
+};
+
+export const contentVariant = {
+  review: {
+    opacity: 0,
+    scale: 0.5,
+    lineHeight: '20px',
+    margin:0
+  },
+  viewReview: {
+    opacity: 1,
+    scale: 1,
+    margin:10,
+    lineHeight: '30px'
+  },
+};
+
+export const userContentVariant = {
+  review: {
+    opacity: 0,
+    x: -200,
+  },
+  viewReview: {
+    opacity: 1,
+    x: 0,
+  },
+};
+
+export const controllerVariant = {
+  viewController: {
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+export const controllerBtnVariant = {
+  rest: {
+    opacity: 0,
+    x: 100,
+  },
+  viewController: {
+    opacity: 1,
+    x: 0,
   },
 };

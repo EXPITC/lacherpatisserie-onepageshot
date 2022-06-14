@@ -18,56 +18,74 @@ import {
 function MoreInfoTablet() {
   // index
   const [current, setCurrent] = useState<number>(0);
-  const [leave, setLeave] = useState<string>('leaveDown');
+  const leave = 'leave';
+  const [enter, setEnter] = useState<string>('enterBottom');
+
+  // helper swap
+  const toUp_Leave_EnterBottom = (_?: 'back') => {
+    let timeout: ReturnType<typeof setTimeout>;
+    setEnter('leaveUp');
+    timeout = setTimeout(() => {
+      clearTimeout(timeout);
+      _ === 'back' ? setCurrent(0) : setCurrent(current + 1);
+      setEnter('enterBottom');
+    }, 200);
+  };
+  const toBottom_Leave_EnterTop = (_?: 'back') => {
+    let timeout: ReturnType<typeof setTimeout>;
+    setEnter('leaveDown');
+    timeout = setTimeout(() => {
+      clearTimeout(timeout);
+      _ === 'back' ? setCurrent(3) : setCurrent(current - 1);
+      setEnter('enterTop');
+    }, 200);
+  };
   // autoSwap
   useEffect(() => {
     let timeout: ReturnType<typeof setTimeout>;
     timeout = setTimeout(() => {
-      if (current === 3) return setCurrent(0);
-      setCurrent(current +1 )
-    }, 2000)
+      clearTimeout(timeout);
+      if (current === 3) return toUp_Leave_EnterBottom('back');
+      toUp_Leave_EnterBottom()
+    }, 3000);
     return () => clearTimeout(timeout);
   }, [current]);
 
   // manualSwap
   const swipe = ({ info }: any) => {
-    console.log(info.movementY);
-
-    const up = () => {
-      const goBack = () => {
-        setCurrent(0);
-        setLeave('leaveDown');
-      };
-      if (current === 3) return goBack()
-
-      setCurrent(current + 1);
-      setLeave('leaveUp');
-    };
+    // engine
     const down = () => {
       const goBack = () => {
-        setCurrent(3);
-        setLeave('leaveUp');
+        toUp_Leave_EnterBottom('back');
+      };
+      if (current === 3) return goBack();
+
+      toUp_Leave_EnterBottom();
+    };
+    const up = () => {
+      const goBack = () => {
+        toBottom_Leave_EnterTop('back');
       };
       if (current === 0) return goBack();
 
-      setCurrent(current - 1);
-      setLeave('leaveDown')
+      toBottom_Leave_EnterTop();
     };
 
+    // main
     if (info.movementY >= 3) return up();
     if (info.movementY <= -3) return down();
     setCurrent(0); //default
   };
 
   return (
-    <MoreInfo initial={leave}>
+    <MoreInfo initial='leave'>
       <motion.li
+      onDragStart={(info: any) => swipe({ info })}
         drag='y'
-        onDragStart={(info: any) => swipe({ info })}
         dragConstraints={{ left: 0, top: 10, right: 0, bottom: 10 }}
         dragElastic={0.2}
         variants={moreContentTabletVariant}
-        animate={current === 0 ? 'enter' : "leave"}
+        animate={current === 0 ? enter : leave}
       >
         <a href='/'>
           <FontAwesomeIcon icon={faTruck} fontSize={'20px'} />
@@ -83,7 +101,7 @@ function MoreInfoTablet() {
         dragConstraints={{ left: 0, top: 10, right: 0, bottom: 10 }}
         dragElastic={0.2}
         variants={moreContentTabletVariant}
-        animate={current === 1 ? 'enter' : 'leave'}
+        animate={current === 1 ? enter : leave}
       >
         <a href='/'>
           <FontAwesomeIcon icon={faFaceSmile} fontSize={'20px'} />
@@ -99,7 +117,7 @@ function MoreInfoTablet() {
         dragConstraints={{ left: 0, top: 10, right: 0, bottom: 10 }}
         dragElastic={0.2}
         variants={moreContentTabletVariant}
-        animate={current === 2 ? 'enter' : "leave"}
+        animate={current === 2 ? enter : leave}
       >
         <a href='www.google.com'>
           <FontAwesomeIcon icon={faHeart} fontSize={'20px'} />
@@ -115,7 +133,7 @@ function MoreInfoTablet() {
         dragConstraints={{ left: 0, top: 10, right: 0, bottom: 10 }}
         dragElastic={0.2}
         variants={moreContentTabletVariant}
-        animate={current === 3 ? 'enter' : "leave"}
+        animate={current === 3 ? enter : leave}
       >
         <a href='/'>
           <FontAwesomeIcon icon={faAward} fontSize={'20px'} />
@@ -177,6 +195,6 @@ function MoreInfoDefault() {
   );
 }
 const MoreInfoElement = ({ tablet }: { tablet?: boolean }): JSX.Element => {
-  return tablet ? <MoreInfoTablet /> : <MoreInfoDefault />;
+  return <>{tablet ? <MoreInfoTablet /> : <MoreInfoDefault />}</>;
 };
 export default MoreInfoElement;

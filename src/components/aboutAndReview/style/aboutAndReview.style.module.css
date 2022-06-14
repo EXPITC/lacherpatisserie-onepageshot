@@ -9,6 +9,7 @@
   width: 100vw;
   overflow: hidden;
 }
+
 .card {
   width: 100vw;
   display: flex;
@@ -37,8 +38,8 @@ p {
   font-weight: var(--subheading-font-weight);
 }
 .card > p {
-    font-weight: lighter;
-    line-height: 24px;
+  font-weight: lighter;
+  line-height: 24px;
 }
 .btnPickup {
   border: none;
@@ -55,13 +56,14 @@ p {
   .card {
     height: 450px;
     position: absolute;
+    z-index: 1;
     min-width: 180px;
     max-width: 350px;
-    width: 25%; 
+    width: 25%;
     max-height: 400px;
     height: 65%;
     background-color: var(--page-background);
-    padding:30px 30px 0px 30px;
+    padding: 30px 30px 0px 30px;
     left: 25px;
   }
   .card > h1 {
@@ -82,62 +84,62 @@ p {
   }
 }
 
-
-
 /* Testimonial  */
 
-.Testimonials{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.Testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .reviewSection {
-    display: flex;
-    padding: 50px 50px 5px 50px;
-    margin: 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  padding: 50px 50px 5px 50px;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
 }
 .reviewSection > h1 {
-    margin-bottom: 40px;
-    font-size: var(--heading-font-size);
-    font-family: var(--header-font-stack);
-    font-weight: var(--header-font-weight);
-    font-style: var(--header-font-style);
-    text-transform: var(--header-font-transform);
-    letter-spacing: var(--header-letter-spacing);
+  margin-bottom: 40px;
+  font-size: var(--heading-font-size);
+  font-family: var(--header-font-stack);
+  font-weight: var(--header-font-weight);
+  font-style: var(--header-font-style);
+  text-transform: var(--header-font-transform);
+  letter-spacing: var(--header-letter-spacing);
 }
 .review {
-    text-align: center;
+  text-align: center;
 }
-.review > p{
-    font-family: var(--body-font-stack);
-    font-weight: lighter;
-    font-style: var(--body-font-style);
-    font-size: var(--body-font-size);
-    line-height: 30px;
+.review > p {
+  position: relative;
+  font-family: var(--body-font-stack);
+  font-weight: lighter;
+  font-style: var(--body-font-style);
+  font-size: var(--body-font-size);
+  line-height: 30px;
 }
-.review > p:last-child{
-    margin-top: 20px;
-    font-weight: 500;
+.review > p:last-child {
+  margin-top: 20px;
+  font-weight: 500;
 }
-.controller{
-    padding: 0;
-    margin: 10;
-    display: flex;
+.controller {
+  padding: 0;
+  margin: 10;
+  display: flex;
 }
 .controller > li {
-    list-style: none;
-    margin: 0;
-    padding: 5px;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
 }
 .controller > li > button {
-    cursor: pointer;
-    background-color: #aeb1b0;
-    height: 11px;
-    width: 5px;
-    border:none;
-    border-radius: 50%;
+  cursor: pointer;
+  background-color: #aeb1b0;
+  height: 11px;
+  width: 5px;
+  border: none;
+  border-radius: 50%;
 }

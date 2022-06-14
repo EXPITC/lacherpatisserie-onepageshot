@@ -33,16 +33,16 @@ function Slideshow() {
   // responsive effect
   const [width, setWidth] = useState<boolean>(false);
   useEffect(() => {
+    setWidth(window.screen.width <= 768);
     window.addEventListener('resize', () => {
-      setWidth(window.screen.width <= 700);
+      setWidth(window.screen.width <= 768);
     });
-    console.log(width)
     return () =>
       window.removeEventListener('resize', () => {
-        setWidth(window.screen.width <= 700);
+        setWidth(window.screen.width <= 768);
       });
-  }, [width]);
-
+  }, []);
+  
   return (
     <motion.section
       className={style.slideshow}
@@ -64,6 +64,7 @@ function Slideshow() {
           }
           alt='cake'
           style={{ y: y, scaleY: 1.1 }}
+          loading='eager'
         />
         <ProductInfo
           variants={productInfoVariant}

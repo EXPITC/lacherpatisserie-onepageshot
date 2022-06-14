@@ -102,17 +102,15 @@ export const gridContentIVVariant = {
 };
 export const imageIIVariant = {
   rest: {
-    x: -5,
+    x: 0,
     y: 0,
-    // border:'2px solid var(--page-background)'
     border: '1px solid var(--page-background)',
   },
   hover: {
-    x: 8,
-    y: 12,
+    x: 16,
+    y: 3,
     border: '2px solid var(--color-scheme-dark-background)',
     transition: {
-      // delay: 0.2,
       duration: 0.2,
     },
   },
@@ -121,7 +119,6 @@ export const cardVariant = {
   rest: {
     boxShadow:
       'var(--color-primary-opacity) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset',
-    // border: '1px solid var(--button-background-color)',
     border: '1px solid var(--page-background)',
   },
   hover: {
@@ -133,3 +130,17 @@ export const cardVariant = {
     },
   },
 };
+
+export const h1MonthlyVariant = {
+  rest: {
+    opacity: 0,
+    x: -40,
+  },
+  viewH1:{
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration:.5
+    }
+  }
+}

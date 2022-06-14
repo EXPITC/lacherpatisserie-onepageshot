@@ -32,8 +32,8 @@ export const Container = styled.div`
 `;
 
 export const ContentWrapper = styled(motion.div)<{
-  col?: boolean;
-  row?: boolean;
+  col?: String;
+  row?: String;
   content?: string;
   gap?: string;
 }>`

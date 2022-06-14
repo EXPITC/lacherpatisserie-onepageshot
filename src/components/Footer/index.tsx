@@ -34,7 +34,7 @@ function Footer() {
           </Content>
           <Content>
             <motion.h1 variants={h1Variant}>Follow Our Socials</motion.h1>
-            <ContentWrapper content='true' row gap='15px' >
+            <ContentWrapper content='true' row={true.toString()} gap='15px' >
               <motion.a href='https://twitter.com/LookItsMeTc' variants={contentVariant} >
                 <FontAwesomeIcon icon={faTwitter} fontSize='22' />
               </motion.a>
@@ -48,7 +48,7 @@ function Footer() {
           </Content>
           <Content>
             <motion.h1 variants={h1Variant} >Quick Links</motion.h1>
-            <ContentWrapper col content='true' gap='15px'>
+            <ContentWrapper col='true' content='true' gap='15px'>
               <motion.a variants={contentVariant} href='https://www.lacherpatisserie.com/collections/same-day-delivery'><p>Same Day Cake & Dessert Delivery</p></motion.a>
               <motion.a variants={contentVariant} href='https://www.lacherpatisserie.com/pages/delivery'><p>Free Delivery to KL & Selangor (Min Amount Spend)</p></motion.a>
               <motion.a variants={contentVariant} href='https://www.lacherpatisserie.com/pages/how-to-find-our-store'>
