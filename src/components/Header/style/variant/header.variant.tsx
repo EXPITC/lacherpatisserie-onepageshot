@@ -1,3 +1,5 @@
+import { table } from 'console';
+
 // nav list bottom
 export const listVariant = {
   rest: {
@@ -106,25 +108,34 @@ export const listEntryVariant = (y: boolean = false) => {
   };
 };
 
-export const barVariant = {
-  rest: {
-    rotate: 0,
-    left: 0,
-  },
-  open: {
-    rotate: 180,
-    left: '20px',
-    top: '55px',
-  },
-  close: {
-    rotate: -360,
-    left: 30,
-    top: '120px',
-  },
-  flip: {
-    rotateX: [0, 180],
-    duration: 0.1,
-  },
+export const barVariant = (screen: 'tablet' | 'phone' | 'phoneS' | false) => {
+  const top = () => {
+    if (screen === 'tablet') return '140px';
+    if (screen === 'phone') return '160px';
+    if (screen === 'phoneS') return '180px';
+    return '120px'
+  };
+  return {
+    rest: {
+      rotate: 0,
+      left: 30,
+      top: top(),
+    },
+    open: {
+      rotate: 180,
+      left: '20px',
+      top: '55px',
+    },
+    close: {
+      rotate: -360,
+      left: screen ? '40px' : '30px',
+      top: top(),
+    },
+    flip: {
+      rotateX: [0, 180],
+      duration: 0.1
+    },
+  };
 };
 
 export const panelVariant = {
@@ -136,7 +147,7 @@ export const panelVariant = {
     opacity: 1,
     width: '100vw',
     transition: {
-      ease:[0.17, 0.67, 0.83, 0.67],
+      ease: [0.17, 0.67, 0.83, 0.67],
       staggerChildren: 0.2,
       delayChildren: 0.2,
     },
@@ -144,8 +155,13 @@ export const panelVariant = {
   close: {
     width: 0,
     transition: {
-      ease:[0.17, 0.67, 0.83, 0.67],
-      duration:0.22
+      ease: [0.17, 0.67, 0.83, 0.67],
+      duration: 0.2,
+    },
+    TransitionEnd: {
+      opacity: 0,
+      width:0,
+      display: 'none'
     }
   },
 };
@@ -154,7 +170,7 @@ export const dropLeftVariant = {
   def: {
     x: '100vw',
     transition: {
-      duration:0.3
+      duration: 0.3,
     }
   },
   view: {
@@ -162,6 +178,29 @@ export const dropLeftVariant = {
     transition: {
       staggerChildren: 0.2,
       delayChildren: 0.2,
+    },
+  },
+};
+
+export const brandVariant = {
+  rest: {
+    opacity: 0,
+    y: 100,
+    width: 0,
+  },
+  open: {
+    display:'inherit',
+    opacity: 1,
+    width: '100%',
+    y: 0,
+  },
+  close: {
+    y: 100,
+    opacity: 0,
+    width: '0px',
+    transition: {
+      ease: [0.17, 0.67, 0.83, 0.67],
+      duration: 0.22,
     },
   },
 };

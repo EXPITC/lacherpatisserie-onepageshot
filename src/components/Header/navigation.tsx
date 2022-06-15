@@ -1,4 +1,9 @@
 import {
+  faTwitter,
+  faInstagramSquare,
+  faGithub,
+} from '@fortawesome/free-brands-svg-icons';
+import {
   faAngleDown,
   faAngleLeft,
   faAngleRight,
@@ -6,9 +11,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion, useAnimation } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Products from '../products';
 import {
   List,
   DropDown,
@@ -17,6 +21,7 @@ import {
   BarMobile,
   ListNavMobile,
   DropLeft,
+  Brand,
 } from './style/header.styled.components';
 import {
   listVariant,
@@ -27,6 +32,7 @@ import {
   barVariant,
   panelVariant,
   dropLeftVariant,
+  brandVariant,
 } from './style/variant/header.variant';
 
 const allProduct = 'All Product';
@@ -54,7 +60,8 @@ const data = [
         },
       ],
     },
-  }, {
+  },
+  {
     products: {
       header: delivery,
       option: [
@@ -77,7 +84,7 @@ const data = [
         {
           name: 'Our Store (For Pickup Only',
           url: '/',
-        }
+        },
       ],
     },
   },
@@ -96,18 +103,63 @@ export function NavigationMini({
   );
   const [subNav, setSubNav] = useState<boolean>(false);
   useEffect(() => {
-    controls.start(open ? 'open' : 'close').then(() => controls.start('flip'));
+    controls.start('close').then(() => controls.start('rest'));
+  }, []);
+  useEffect(() => {
+    controls
+      .start(open === true ? 'open' : 'close')
+      .then(() => controls.start('flip'));
   }, [controls, open]);
   useEffect(() => {
     controls.start(subNav ? 'view' : 'def');
   }, [controls, subNav]);
+
+  // responsive effect
+  const [width, setWidth] = useState<'tablet' | 'phone' | 'phoneS' | false>(
+    'phoneS',
+  );
+  useEffect(() => {
+    const deft = () => {
+      const tablet = window.screen.width <= 633;
+      const phone = window.screen.width < 413;
+      const phoneS = window.screen.width <= 320;
+      if (phone && phoneS) return 'phoneS';
+      if (tablet && phone) return 'phone';
+      if (tablet) return 'tablet';
+      return false;
+    };
+    setWidth(deft());
+    let timeout: ReturnType<typeof setTimeout>;
+    window.addEventListener('resize', () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        setWidth(deft());
+        console.log(deft());
+        open
+          ? controls.stop()
+          : controls.start('close').then(() => controls.start('flip'));
+      }, 500);
+    });
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener('resize', () => {
+        deft();
+      });
+    };
+  }, [controls, open, setOpen, width]);
+  useEffect(() => {
+    controls.start('close')
+  },[controls, width])
   return (
     <NavMobile>
       <BarMobile
         onClick={setOpen}
         animate={controls}
         initial='rest'
-        variants={barVariant}
+        transition={{
+          top: width === 'tablet' ? '10px' : '20px',
+        }}
+        variants={barVariant(width)}
       >
         <FontAwesomeIcon icon={faBarsStaggered} />
       </BarMobile>
@@ -187,9 +239,24 @@ export function NavigationMini({
               );
             })}
         </DropLeft>
-
-        {/* <Logo/> */}
       </Panel>
+      <Brand
+        variants={brandVariant}
+        animate={controls}
+        initial='rest'
+      >
+        <div>
+          <motion.a href='https://twitter.com/LookItsMeTc'>
+            <FontAwesomeIcon icon={faTwitter} fontSize='22' />
+          </motion.a>
+          <motion.a href='https://www.instagram.com/lacherpatisserie'>
+            <FontAwesomeIcon icon={faInstagramSquare} fontSize='22' />
+          </motion.a>
+          <motion.a href='https://github.com/EXPITC'>
+            <FontAwesomeIcon icon={faGithub} fontSize='22' />
+          </motion.a>
+        </div>
+      </Brand>
     </NavMobile>
   );
 }

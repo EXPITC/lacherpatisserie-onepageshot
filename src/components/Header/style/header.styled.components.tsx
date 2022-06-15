@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { device } from '../../../global.styled.components';
@@ -166,29 +165,49 @@ export const DropDown = styled(motion.ul)<{ textcenter?: String }>`
   }
 `;
 
-//mobile navigation
+//-------------------mobile navigation
 export const BarMobile = styled(motion.span)`
   position: absolute;
   left: 30px;
   top: 120px;
   z-index: 999;
+  @media (max-width: 633px) {
+    top: 140px;
+  }
+  @media (max-width: 411px) {
+    top: 160px;
+  }
+  @media (max-width: 320px) {
+    top: 180px;
+  }
 `;
 
 export const NavMobile = styled.div`
   background-color: var(--mobile-menu-background);
   margin: 0;
   padding: 0;
+  width: fit-content;
   display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  justify-content: center;
+  align-items: center;
   height: inherit;
   @media (min-width: 1011px) {
     display: none;
   }
+  /* @media (max-width: 700px) {
+    width: 60vw;
+  } */
 `;
 
 export const Panel = styled(motion.div)`
   background-color: var(--sale-color);
   flex: 1;
   max-width: 40vw;
+  @media (max-width: 700px) {
+    max-width: 60vw;
+  }
   /* @media (){
     
   } */
@@ -203,16 +222,19 @@ export const Panel = styled(motion.div)`
 export const ListNavMobile = styled(motion.ul)`
   padding-top: 40px;
   margin: 0;
-  /* margin-top: 40px; */
   align-items: center;
   height: 100vh;
   & li {
-    padding: 0 3vw 0 2vw;
+    padding: 0 1vw 0 3vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border: 1px solid black;
     width: 35vw;
+    @media (max-width: 700px) {
+      padding: 0 3vw 0 5vw;
+      width: 50vw;
+    }
     height: 50px;
     border: none;
     border-bottom: 1px solid var(--color-scheme-dark-background);
@@ -247,17 +269,24 @@ export const ListNavMobile = styled(motion.ul)`
 export const DropLeft = styled(motion.ul)`
   background-color: var(--sale-color);
   /* opacity: 0.5; */
-  top:0;
+  top: 0;
   padding-top: 40px;
   height: 100vh;
   width: 40vw;
+  @media (max-width: 700px) {
+    width: 60vw;
+  }
   position: fixed;
   & li {
-    padding: 0 3vw 0 2vw;
+    padding: 0 1vw 0 3vw;
     display: flex;
     align-items: center;
     border: 1px solid black;
     width: 35vw;
+    @media (max-width: 700px) {
+      padding: 0 3vw 0 5vw;
+      width: 50vw;
+    }
     height: 50px;
     border: none;
     border-bottom: 1px solid var(--color-scheme-dark-background);
@@ -265,22 +294,46 @@ export const DropLeft = styled(motion.ul)`
       justify-content: center;
       > p {
         margin-left: 10px;
+        list-style: none;
+      }
+      @media (max-width:400px) {
+        padding-top: 30px;
       }
     }
     > a,
     p {
-      /* 
+      /*
       --header-font-stack: Garamond, Baskerville, Caslon, serif;
       --header-font-weight: 400;
       --header-font-style: italic;
       --header-font-transform: none;
       --header-letter-spacing: normal;
        */
+      display: list-item;
+      list-style: disc;
       font-weight: var(--header-font-weight);
       font-family: var(--header-font-stack);
       text-decoration: none;
       font-size: 20px;
       color: var(--active-link-color);
     }
+  }
+`;
+
+export const Brand = styled(motion.div)`
+  height: 50px;
+  position: relative;
+  bottom: 10px;
+  min-width: 0px;
+  max-width: 40vw;
+  > div {
+    width: inherit;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  & a {
+    text-decoration: none;
+    color: inherit;
   }
 `;

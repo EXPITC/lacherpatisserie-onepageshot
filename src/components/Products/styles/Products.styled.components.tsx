@@ -149,7 +149,6 @@ export const GridItem = styled(motion.div)<{ products?: String }>`
             width: 100%;
           }
           @media (max-width: 910px) {
-            border:1px solid black;
             max-width: 220px;
           }
           @media ${tabletS} {

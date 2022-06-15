@@ -1,3 +1,4 @@
+import { time } from 'console';
 import {
   motion,
   useAnimation,
@@ -15,7 +16,7 @@ import {
   textVariant,
 } from './style/variant/slideshow.variant';
 
-function Slideshow() {
+function Slideshow({ open }: { open: Boolean }) {
   // scroll
   const { scrollYProgress } = useViewportScroll();
   const [y, setY] = useState<any>(0);
@@ -23,9 +24,9 @@ function Slideshow() {
   const maxMovement = [-30, 250];
   const yRange = useTransform(scrollYProgress, yInput, maxMovement);
   useEffect(() => {
-    yRange.onChange(() => setY(yRange));
+    open ? yRange.onChange(() => '') : yRange.onChange(() => setY(yRange));
     return () => yRange.destroy();
-  }, [scrollYProgress, yRange]);
+  }, [open, scrollYProgress, yRange]);
 
   // animation when viewport
   const controls = useAnimation();
@@ -34,15 +35,21 @@ function Slideshow() {
   const [width, setWidth] = useState<boolean>(false);
   useEffect(() => {
     setWidth(window.screen.width <= 768);
+    let timeout: ReturnType<typeof setTimeout>;
     window.addEventListener('resize', () => {
-      setWidth(window.screen.width <= 768);
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        setWidth(window.screen.width <= 768);
+      }, 500);
     });
-    return () =>
+    return () => {
+      clearTimeout(timeout);
       window.removeEventListener('resize', () => {
         setWidth(window.screen.width <= 768);
       });
+    };
   }, []);
-  
+
   return (
     <motion.section
       className={style.slideshow}

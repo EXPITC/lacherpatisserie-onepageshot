@@ -17,9 +17,9 @@ function Header() {
 
 
   return (
+    
     <header className={style.header}>
       <WrapperTop>
-        
         <img
           src={'https://cdn.shopify.com/s/files/1/0040/2305/8561/files/header-logo_0d72dc14-6acd-4a74-b2d7-a61300319c07_300x.png'}
           alt='logo'

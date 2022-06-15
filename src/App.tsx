@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import LandingPage from './components/LandingPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
-import Info from './components/info';
+import Disclaimer from './components/disclaimer';
 import Footer from './components/Footer';
 import { NavigationMini } from './components/Header/navigation';
 import { motion } from 'framer-motion';
 
 function App() {
-  const [open, setOpen] = useState<Boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
   return (
     <BrowserRouter>
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex' ,overflowY:'hidden' }}>
         <NavigationMini setOpen={() => setOpen(!open)} open={open} />
         <div>
           <motion.div
@@ -37,10 +37,10 @@ function App() {
               position: open ? 'fixed' : 'inherit',
             }}
           >
-            <Info />
+            <Disclaimer />
             <Header />
             <Routes>
-              <Route path='/' element={<LandingPage />}>
+              <Route path='/' element={<LandingPage open={open} />}>
                 {/* <Route path="expenses" element={<Expenses />} /> */}
                 {/* <Route path="invoices" element={<Invoices />} /> */}
               </Route>

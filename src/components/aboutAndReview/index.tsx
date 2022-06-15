@@ -108,14 +108,18 @@ function AboutAndReview() {
   
   // responsive effect
   const [width, setWidth] = useState<boolean>(false);
+  const [widthM, setWidthM] = useState<boolean>(false);
   useEffect(() => {
     setWidth(window.screen.width <= 600);
+    setWidthM(window.screen.width <= 375);
     window.addEventListener('resize', () => {
       setWidth(window.screen.width <= 600);
+      setWidthM(window.screen.width <= 375)
     });
     return () =>
       window.removeEventListener('resize', () => {
         setWidth(window.screen.width <= 600);
+        setWidthM(window.screen.width <= 375)
       });
   }, []);
   return (
@@ -133,7 +137,7 @@ function AboutAndReview() {
           <motion.img
             src='https://cdn.shopify.com/s/files/1/0040/2305/8561/files/storefront_65175bc7-c865-4345-aaf3-7159a050bfce_2100x.jpg'
             alt='lacherpatisserie'
-            style={{ maxWidth: width? '800px': 'unset', width: width ? '140%' : '100vw', height: width ? '800px':'1000px', objectFit: 'cover', y, translateX: width ? -150 : 0}}
+            style={{ maxWidth: width ? '800px' : 'unset', width: width ? '140%' : '100vw', height: width ? '800px' : '1000px', objectFit: 'cover', y, translateX: width ? widthM ? -120 : -150 : 0}}
           />
         </div>
         <motion.div

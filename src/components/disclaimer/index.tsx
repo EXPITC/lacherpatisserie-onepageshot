@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './styles/info.style.module.css';
 
-function Info({
+function Disclaimer({
   text = 'Heavy traffic/bad weather conditions may cause delays in deliveries especially for 3-5pm and 5-7pm slots. Order by 2pm for same day delivery/pickup. Latest pickup by 6pm.',
 }: {
   text?: string;
@@ -13,4 +13,4 @@ function Info({
   );
 }
 
-export default Info;
+export default Disclaimer;
