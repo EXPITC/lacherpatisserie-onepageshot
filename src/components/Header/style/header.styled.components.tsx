@@ -186,11 +186,14 @@ export const NavMobile = styled.div`
   background-color: var(--mobile-menu-background);
   margin: 0;
   padding: 0;
+  /* position: sticky; */
+  /* z-index: 99; */
   width: fit-content;
   display: flex;
   flex-direction: column;
   /* justify-content: flex-start; */
   justify-content: center;
+  align-content: space-around;
   align-items: center;
   height: inherit;
   @media (min-width: 1011px) {
@@ -221,6 +224,7 @@ export const Panel = styled(motion.div)`
 `;
 
 export const ListNavMobile = styled(motion.ul)`
+  /* height: 80vh; */
   padding-top: 40px;
   margin: 0;
   align-items: center;
@@ -228,12 +232,12 @@ export const ListNavMobile = styled(motion.ul)`
   /* -------if prefer to use scroll on left  */
   /* enable this */
 
-  /* height: 90vh; */
+  height: 90vh;
   /* overflow-x: hidden; */
   /* overflow-y: scroll; */
   & li {
     /* and this */
-    /* position: sticky; */
+    position: sticky;
     padding: 0 1vw 0 3vw;
     display: flex;
     align-items: center;
@@ -291,7 +295,6 @@ export const DropLeft = styled(motion.ul)`
     padding: 0 1vw 0 3vw;
     display: flex;
     align-items: center;
-    border: 1px solid black;
     width: 35vw;
     @media (max-width: 700px) {
       padding: 0 2vw 0 6vw;
@@ -333,7 +336,7 @@ export const DropLeft = styled(motion.ul)`
 export const Brand = styled(motion.div)`
   height: 70px;
   position: relative;
-  bottom: 0;
+  bottom: 0px;
   min-width: 0px;
   max-width: 40vw;
   > div {

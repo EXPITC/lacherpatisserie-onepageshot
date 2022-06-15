@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   BoxContent,
   Header,
@@ -10,7 +10,7 @@ import {
   WordBullet,
   Wrapper,
 } from './style/help.styled.components';
-import { AnimatePresence, motion, useAnimation } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Wave } from './asset/svg';
 import question from './asset/question.svg';
 import {

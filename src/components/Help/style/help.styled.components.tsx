@@ -242,6 +242,10 @@ export const ListContent = styled(motion.ul)`
 
 export const Trigger = styled(motion.span)`
   width: fit-content;
+  @media (max-width:400px) {
+    width: 25vw;
+    height: 14vw;
+  }
   height: 30px;
   display: flex;
   align-items: center;
