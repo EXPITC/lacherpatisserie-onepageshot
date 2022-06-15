@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import LandingPage from './components/landingPage';
+import LandingPage from './components/LandingPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/header';
 import Disclaimer from './components/disclaimer';
