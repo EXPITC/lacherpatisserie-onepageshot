@@ -1,8 +1,8 @@
 import React from 'react';
-import Slideshow from '../slideshow/index';
-import Products from '../products/index';
-import AboutAndReview from '../aboutAndReview/index';
-import Blog from '../blog/index';
+import Slideshow from '../slideshow';
+import Products from '../products';
+import AboutAndReview from '../aboutAndReview';
+import Blog from '../blog';
 
 function LandingPage({open}:{open:Boolean}) {
   return (
