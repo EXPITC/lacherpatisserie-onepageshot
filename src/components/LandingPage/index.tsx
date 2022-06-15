@@ -11,7 +11,6 @@ function LandingPage({open}:{open:Boolean}) {
         <Products />
         <AboutAndReview />
         <Blog />
-        {/* <div>LandingPage</div> */}
       </div>
   );
 }
