@@ -1,4 +1,4 @@
-import { table } from 'console';
+
 
 // nav list bottom
 export const listVariant = {

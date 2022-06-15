@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link as link } from 'react-router-dom';
 import { device } from '../../../global.styled.components';
 import { motion } from 'framer-motion';
-const { tabletS, tablet, laptop, laptopM, mobileM } = device;
+const { tabletS, tablet, laptop, laptopM } = device;
 export const Link = styled(link)`
   color: inherit;
   text-decoration: inherit;

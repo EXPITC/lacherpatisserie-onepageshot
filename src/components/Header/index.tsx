@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faBarsStaggered,
   faCartShopping,
   faUser,
 } from '@fortawesome/free-solid-svg-icons';

@@ -1,4 +1,3 @@
-import { animations } from 'framer-motion';
 
 export const hoverVariant = {
   hover: {

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import LandingPage from './components/LandingPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Header from './components/header';
-import Disclaimer from './components/disclaimer';
-import Footer from './components/footer';
-import { NavigationMini } from './components/header/navigation';
+import Header from './components/Header';
+import Disclaimer from './components/Disclaimer';
+import Footer from './components/Footer';
+import { NavigationMini } from './components/Header/navigation';
 import { motion } from 'framer-motion';
-import Help from './components/help';
+import Help from './components/Help';
 
 function App() {
   const [open, setOpen] = useState<boolean>(false);
