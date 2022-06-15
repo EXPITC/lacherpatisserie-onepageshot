@@ -4,7 +4,6 @@ import { device } from '../../../global.styled.components';
 const { tablet, tabletS } = device;
 
 export const ProductInfo = styled(motion.div)`
-  /* border:1px solid black; */
   position: relative;
   bottom: 200px;
   left: 5vw;
@@ -48,7 +47,6 @@ export const ProductInfo = styled(motion.div)`
 `;
 
 export const MoreInfo = styled(motion.div)`
-  /* border: 1px solid black; */
   background-color: var(--color-scheme-light-background);
   width: 100vw;
   height: fit-content;
@@ -69,12 +67,10 @@ export const MoreInfo = styled(motion.div)`
     display: flex;
     align-items: center;
     justify-content: center;
-    /* height: 100px; */
-    /* height: fit-content; */
     overflow-wrap: normal;
     list-style: none;
     cursor: cursor;
-    /* border: 1px solid black; */
+
     :nth-child(2) {
       border-left: 2px solid var(--slideshow-border-color);
       border-right: 2px solid var(--slideshow-border-color);
@@ -88,7 +84,6 @@ export const MoreInfo = styled(motion.div)`
       height: 50px;
       max-width: 50vw;
       width: 100%;
-      /* position: absolute; */
     }
     a > div {
       text-align: center;
@@ -99,7 +94,7 @@ export const MoreInfo = styled(motion.div)`
       max-width: 150px;
       margin-left: 20px;
       text-overflow: clip;
-      /* border:1px solid orange; */
+
       > h4 {
         font-size: 15px;
         font-weight: 600;
@@ -116,7 +111,7 @@ export const MoreInfo = styled(motion.div)`
       justify-content: center;
       align-items: center;
       text-decoration: none;
-      /* border:1px solid black; */
+
       position: inherit;
     }
   }

@@ -32,7 +32,7 @@ export const contentVariant = {
     content: {
         opacity: 1,
         y:0
-    }
+    },
 }
 
 export const formVariant = {

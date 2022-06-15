@@ -6,12 +6,13 @@ import Disclaimer from './components/disclaimer';
 import Footer from './components/Footer';
 import { NavigationMini } from './components/Header/navigation';
 import { motion } from 'framer-motion';
+import Help from './components/Help';
 
 function App() {
   const [open, setOpen] = useState<boolean>(false);
   return (
     <BrowserRouter>
-      <div style={{ display: 'flex' ,overflowY:'hidden' }}>
+      <div style={{ display: 'flex' ,overflow:'hidden' }}>
         <NavigationMini setOpen={() => setOpen(!open)} open={open} />
         <div>
           <motion.div
@@ -45,6 +46,7 @@ function App() {
                 {/* <Route path="invoices" element={<Invoices />} /> */}
               </Route>
             </Routes>
+            <Help/>
             <Footer />
           </div>
         </div>

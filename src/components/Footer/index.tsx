@@ -20,7 +20,7 @@ function Footer() {
   const controls = useAnimation()
 
   return (
-    <motion.footer className={style.footer} variants={footerVariant} initial='rest' animate={controls} onViewportEnter={() => controls.start(['view','content'])}>
+    <motion.footer className={style.footer} variants={footerVariant} initial='rest'  animate={controls} onViewportEnter={() => controls.start(['view','content'])}>
       <Container>
         <ContentWrapper>
           <Content>
@@ -75,7 +75,8 @@ function Footer() {
           </Content>
         </ContentWrapper>
         <span>
-          <Copyright variants={copyrightVariant} initial='rest' animate={controls} onViewportEnter={()=>controls.start('copyright')} />
+          <Copyright variants={copyrightVariant} initial='rest' animate={controls} onViewportEnter={() => controls.start('copyright')} />
+          <p style={{fontSize:10,opacity:0.2}}>adjustment by tc / 2022</p>
         </span>
       </Container>
     </motion.footer>

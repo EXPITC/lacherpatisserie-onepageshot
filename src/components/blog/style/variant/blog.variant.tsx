@@ -47,4 +47,13 @@ export const buttonVariant = {
     opacity: 1,
     y: 0,
   },
+  hover: {
+    backgroundColor:'var(--color-primary)'
+  }
 };
+
+export const imgVariant = {
+  hover: {
+    filter:'brightness(70%)'
+  }
+}

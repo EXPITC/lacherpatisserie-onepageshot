@@ -205,6 +205,7 @@ export const Panel = styled(motion.div)`
   background-color: var(--sale-color);
   flex: 1;
   max-width: 40vw;
+  opacity: 0;
   @media (max-width: 700px) {
     max-width: 60vw;
   }
@@ -223,8 +224,16 @@ export const ListNavMobile = styled(motion.ul)`
   padding-top: 40px;
   margin: 0;
   align-items: center;
-  height: 100vh;
+  /* -------prefer to not use scroll on left  */
+  /* -------if prefer to use scroll on left  */
+  /* enable this */
+
+  /* height: 90vh; */
+  /* overflow-x: hidden; */
+  /* overflow-y: scroll; */
   & li {
+    /* and this */
+    /* position: sticky; */
     padding: 0 1vw 0 3vw;
     display: flex;
     align-items: center;
@@ -273,6 +282,7 @@ export const DropLeft = styled(motion.ul)`
   padding-top: 40px;
   height: 100vh;
   width: 40vw;
+  overflow: hidden;
   @media (max-width: 700px) {
     width: 60vw;
   }
@@ -284,7 +294,7 @@ export const DropLeft = styled(motion.ul)`
     border: 1px solid black;
     width: 35vw;
     @media (max-width: 700px) {
-      padding: 0 3vw 0 5vw;
+      padding: 0 2vw 0 6vw;
       width: 50vw;
     }
     height: 50px;
@@ -296,7 +306,7 @@ export const DropLeft = styled(motion.ul)`
         margin-left: 10px;
         list-style: none;
       }
-      @media (max-width:400px) {
+      @media (max-width: 400px) {
         padding-top: 30px;
       }
     }
@@ -321,9 +331,9 @@ export const DropLeft = styled(motion.ul)`
 `;
 
 export const Brand = styled(motion.div)`
-  height: 50px;
+  height: 70px;
   position: relative;
-  bottom: 10px;
+  bottom: 0;
   min-width: 0px;
   max-width: 40vw;
   > div {
@@ -335,5 +345,8 @@ export const Brand = styled(motion.div)`
   & a {
     text-decoration: none;
     color: inherit;
+    * > {
+      font-size: 5px;
+    } 
   }
 `;

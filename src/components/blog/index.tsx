@@ -9,6 +9,7 @@ import {
   contentLeftVariant,
   contentRightVariant,
   h1Variant,
+  imgVariant,
 } from './style/variant/blog.variant';
 
 function Blog() {
@@ -22,11 +23,13 @@ function Blog() {
     >
       <motion.h1 variants={h1Variant}>From the blog</motion.h1>
       <BlogContent onViewportEnter={() => controls.start(['view', 'content'])}>
-        <motion.div variants={contentLeftVariant} onViewportEnter={()=>controls.start('contentLeft')}>
-          <img
+        <motion.div variants={contentLeftVariant} onViewportEnter={() => controls.start('contentLeft')}>
+          <a  href='https://www.lacherpatisserie.com/blogs/news/25-chinese-new-year-wishes-in-chinese-english-for-cny-2022'>
+          <motion.img variants={imgVariant} whileHover='hover'
             src='https://cdn.shopify.com/s/files/1/0040/2305/8561/articles/cny-wishes_1500x.jpg'
             alt='25 Chinese New Year Wishes in Chinese & English for CNY 2022!'
-          />
+            />
+            </a>
           <h4>25 Chinese New Year Wishes in Chinese & English for CNY 2022!</h4>
           <p>
             through words of encouragement, love, and well wishes. However,
@@ -38,11 +41,13 @@ function Blog() {
             Read more
           </Btn>
         </motion.div>
-        <motion.div variants={contentRightVariant} onViewportEnter={()=> controls.start('contentRight')}>
-          <img
+        <motion.div variants={contentRightVariant} onViewportEnter={() => controls.start('contentRight')}>
+          <a href='https://www.lacherpatisserie.com/blogs/news/25-chinese-new-year-wishes-in-chinese-english-for-cny-2022'>
+          <motion.img variants={imgVariant} whileHover='hover'
             src='https://cdn.shopify.com/s/files/1/0040/2305/8561/articles/2021-christmas-edition-slider_1500x.jpg'
             alt='2 captivating 2021 Christmas cakes that will WOW your friends and family!'
-          />
+            />
+            </a>
           <h4>
             2 captivating 2021 Christmas cakes that will WOW your friends and
             family!
@@ -59,7 +64,7 @@ function Blog() {
           </Btn>
         </motion.div>
       </BlogContent>
-      <ViewAll variants={buttonVariant} onViewportEnter={()=>controls.start('button')} href='https://www.lacherpatisserie.com/blogs/news'>View all</ViewAll>
+      <ViewAll variants={buttonVariant} whileHover='hover' onViewportEnter={()=>controls.start('button')} href='https://www.lacherpatisserie.com/blogs/news'>View all</ViewAll>
     </motion.section>
   );
 }

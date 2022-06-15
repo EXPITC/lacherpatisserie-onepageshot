@@ -1,0 +1,23 @@
+.help {
+  border: 1px solid red;
+  height: 200px;
+  border-radius: -10px;
+}
+
+.wave {
+  height: 80px;
+  max-width: 380px;
+  width: 100%;
+  background-color: transparent;
+  /* position: fixed; */
+  position: relative;
+  z-index: 999;
+  top: 0;
+}
+
+@media (max-width:412px) {
+  .wave{
+    max-width: 412px;
+    height:68px;
+  }
+}

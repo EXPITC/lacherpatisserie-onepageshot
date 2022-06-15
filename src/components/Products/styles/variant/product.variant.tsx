@@ -1,23 +1,14 @@
 export const imageVariant = {
   rest: {
     scale: 1,
+    filter: 'brightness(75%)'
   },
   hover: {
     scale: 2,
+    filter: 'brightness(100%)'
   },
 };
 
-export const coverVariant = {
-  rest: {
-    backgroundColor: '#000000',
-    opacity: 0.2,
-    scale: 1,
-  },
-  hover: {
-    scale: 2,
-    opacity: 0,
-  },
-};
 
 export const textVariant = {
   rest: {

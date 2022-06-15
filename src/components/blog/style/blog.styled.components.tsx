@@ -4,9 +4,11 @@ import styled from 'styled-components';
 import { device } from '../../../global.styled.components';
 const { tablet, tabletS } = device;
 
-
 export const Btn = styled(motion.a)`
   color: black;
+  :hover {
+    opacity: 0.6;
+  }
 `;
 export const ViewAll = styled(motion.a)`
   color: var(--button-text-color);
@@ -32,13 +34,13 @@ export const BlogContent = styled(motion.div)`
     @media ${tabletS} {
       width: 90vw;
     }
-    > img {
+    a > img {
       width: inherit;
       height: 20vw;
-
-    @media ${tabletS} {
-      height: 45vw;
-    }
+    
+      @media ${tabletS} {
+        height: 45vw;
+      }
     }
     > h4 {
       font-size: 15px;

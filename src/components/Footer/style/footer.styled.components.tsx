@@ -54,8 +54,8 @@ export const ContentWrapper = styled(motion.div)<{
     color:var(--color-link);
     text-decoration: none;
     transition: 0.8s cubic-bezier(0.23, 1, 0.320, 1);
-    &:hover {
-      opacity: 0.6;
+    :hover {
+      opacity: 0.6 !important;
       color: var(--button-background-hover-color-lighten);
     }
     > p {
