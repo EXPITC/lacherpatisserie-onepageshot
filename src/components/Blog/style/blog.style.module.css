@@ -1,0 +1,19 @@
+.blog{
+    background-color: var(--color-scheme-light-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    padding: 0  0 60px 0;
+    overflow: hidden;
+}
+.blog > h1 {
+    margin: 60px;
+    font-size: var(--heading-font-size);
+    font-family: var(--header-font-stack);
+    font-weight: var(--header-font-weight);
+    font-style: var(--header-font-style);
+    text-transform: var(--header-font-transform);
+    letter-spacing: var(--header-letter-spacing);
+}
