@@ -204,7 +204,7 @@ export const Panel = styled(motion.div)`
   max-width: 330px;
   opacity: 0;
   @media (max-width: 411px) {
-    max-width: 220px;
+    max-width: 240px;
   }
 
   > * {
@@ -236,7 +236,7 @@ export const ListNavMobile = styled(motion.ul)`
     width: 280px;
     text-align: left;
     @media (max-width: 411px) {
-      width: 170px;
+      width: 190px;
     }
     height: 51px;
     border: none;
@@ -277,7 +277,7 @@ export const DropLeft = styled(motion.ul)`
   width: 330px;
   overflow: hidden;
   @media (max-width: 411px) {
-    max-width: 220px;
+    max-width: 240px;
   }
   position: fixed;
   & li {
@@ -286,7 +286,7 @@ export const DropLeft = styled(motion.ul)`
     align-items: center;
     width: 280px;
     @media (max-width: 411px) {
-      width: 170px;
+      width: 190px;
     }
     height: 50px;
     border: none;
