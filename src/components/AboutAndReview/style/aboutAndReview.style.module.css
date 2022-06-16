@@ -113,7 +113,6 @@ p {
 }
 .review {
   text-align: center;
-  border: 1px solid green;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -128,7 +127,6 @@ p {
   font-style: var(--body-font-style);
   font-size: var(--body-font-size);
   line-height: 30px;
-  border: 1px solid red;
 }
 .review > p:last-child {
   /* margin-top: 20px; */
@@ -159,7 +157,6 @@ p {
     padding: 0;
   }
   .review {
-    border:1px solid red;
     width: 90vw;
     height: 400px;
   }
