@@ -128,7 +128,7 @@ export const barVariant = (screen: 'tablet' | 'phone' | 'phoneS' | false) => {
     },
     close: {
       rotate: -360,
-      left: screen ? '40px' : '30px',
+      left: '30px',
       top: top(),
     },
     flip: {

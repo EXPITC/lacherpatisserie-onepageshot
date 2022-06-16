@@ -148,8 +148,10 @@ export function NavigationMini({
     };
   }, [controls, open, setOpen, width]);
   useEffect(() => {
-    controls.start('close')
-  },[controls, width])
+    controls.start('close');
+  }, [controls, width]);
+  // end of responsive
+
   return (
     <NavMobile>
       <BarMobile
@@ -163,16 +165,21 @@ export function NavigationMini({
       >
         <FontAwesomeIcon icon={faBarsStaggered} />
       </BarMobile>
+
       <Panel variants={panelVariant} animate={controls} initial='rest'>
         <ListNavMobile layoutScroll>
           <li>
             <a href='/'>Home</a>
           </li>
           <li>
-            <a href='https://www.lacherpatisserie.com/collections/same-day-delivery'>Same Day Delivery</a>
+            <a href='https://www.lacherpatisserie.com/collections/same-day-delivery'>
+              Same Day Delivery
+            </a>
           </li>
           <li>
-            <a href='https://www.lacherpatisserie.com/collections/1-day-preorder'>1 Day Preorder</a>
+            <a href='https://www.lacherpatisserie.com/collections/1-day-preorder'>
+              1 Day Preorder
+            </a>
           </li>
           <li
             onClick={() => {
@@ -196,16 +203,22 @@ export function NavigationMini({
             <a href='https://www.lacherpatisserie.com/blogs/news'>Blogs</a>
           </li>
           <li>
-            <a href='https://www.lacherpatisserie.com/pages/about-us'>About Us</a>
+            <a href='https://www.lacherpatisserie.com/pages/about-us'>
+              About Us
+            </a>
           </li>
           <li>
-            <a href='https://www.lacherpatisserie.com/pages/contact-us'>Contact Us</a>
+            <a href='https://www.lacherpatisserie.com/pages/contact-us'>
+              Contact Us
+            </a>
           </li>
           <li>
             <a href='https://www.lacherpatisserie.com/account/login'>Log in</a>
           </li>
           <li>
-            <a href='https://www.lacherpatisserie.com/account/register'>Create Account</a>
+            <a href='https://www.lacherpatisserie.com/account/register'>
+              Create Account
+            </a>
           </li>
         </ListNavMobile>
 
@@ -223,23 +236,20 @@ export function NavigationMini({
                     <FontAwesomeIcon icon={faAngleLeft} />
                     <p>{header}</p>
                   </li>
-                  {option.map(({url,name}) => {
-                    return(
-                  <li>
-                    <a href={url}>{name}</a>
+                  {option.map(({ url, name }) => {
+                    return (
+                      <li>
+                        <a href={url}>{name}</a>
                       </li>
-                    )
+                    );
                   })}
                 </>
               );
             })}
         </DropLeft>
       </Panel>
-      <Brand
-        variants={brandVariant}
-        animate={controls}
-        initial='rest'
-      >
+
+      <Brand variants={brandVariant} animate={controls} initial='rest'>
         <div>
           <motion.a href='https://twitter.com/LookItsMeTc'>
             <FontAwesomeIcon icon={faTwitter} fontSize='22' />
@@ -292,7 +302,9 @@ export function NavigationDefault() {
             <DropDown variants={allProductVariant} textcenter='true'>
               <li>
                 <motion.span variants={listEntryVariant()}>
-                  <a href='https://www.lacherpatisserie.com/collections/cakes-gateaux'>Whole Cake</a>
+                  <a href='https://www.lacherpatisserie.com/collections/cakes-gateaux'>
+                    Whole Cake
+                  </a>
                 </motion.span>
               </li>
               <li>
@@ -304,12 +316,16 @@ export function NavigationDefault() {
               </li>
               <li>
                 <motion.span variants={listEntryVariant()}>
-                  <a href='https://www.lacherpatisserie.com/collections/limited-edition'>Limited Edition</a>
+                  <a href='https://www.lacherpatisserie.com/collections/limited-edition'>
+                    Limited Edition
+                  </a>
                 </motion.span>
               </li>
               <li>
                 <motion.span variants={listEntryVariant(y)}>
-                  <a href='https://www.lacherpatisserie.com/collections/add-ons'>Add-Ons</a>
+                  <a href='https://www.lacherpatisserie.com/collections/add-ons'>
+                    Add-Ons
+                  </a>
                 </motion.span>
               </li>
             </DropDown>
@@ -327,27 +343,37 @@ export function NavigationDefault() {
             <DropDown variants={deliveryVariant}>
               <li>
                 <motion.span variants={listEntryVariant()}>
-                  <a href='https://www.lacherpatisserie.com/pages/delivery'>Delivery Fee</a>
+                  <a href='https://www.lacherpatisserie.com/pages/delivery'>
+                    Delivery Fee
+                  </a>
                 </motion.span>
               </li>
               <li>
                 <motion.span variants={listEntryVariant()}>
-                  <a href='https://www.lacherpatisserie.com/pages/frequently-asked-questions'>FAQs</a>
+                  <a href='https://www.lacherpatisserie.com/pages/frequently-asked-questions'>
+                    FAQs
+                  </a>
                 </motion.span>
               </li>
               <li>
                 <motion.span variants={listEntryVariant()}>
-                  <a href='https://www.lacherpatisserie.com/pages/how-to-choose-the-flavour'>How To Choose The Flavour</a>
+                  <a href='https://www.lacherpatisserie.com/pages/how-to-choose-the-flavour'>
+                    How To Choose The Flavour
+                  </a>
                 </motion.span>
               </li>
               <li>
                 <motion.span variants={listEntryVariant()}>
-                  <a href='https://www.lacherpatisserie.com/pages/allergen-and-diet-information'>Allergen and Diet Information</a>
+                  <a href='https://www.lacherpatisserie.com/pages/allergen-and-diet-information'>
+                    Allergen and Diet Information
+                  </a>
                 </motion.span>
               </li>
               <li>
                 <motion.span variants={listEntryVariant()}>
-                  <a href='https://www.lacherpatisserie.com/pages/how-to-find-our-store'>Our Store (For Pickup Only)</a>
+                  <a href='https://www.lacherpatisserie.com/pages/how-to-find-our-store'>
+                    Our Store (For Pickup Only)
+                  </a>
                 </motion.span>
               </li>
             </DropDown>

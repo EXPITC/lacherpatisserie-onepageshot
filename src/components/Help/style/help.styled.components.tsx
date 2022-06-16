@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const HelpBtn = styled.div`
   position: fixed;
-  z-index: 99;
+  z-index: 300;
   height: 30px;
   width: 30px;
   background-color: var(--button-background-color);
@@ -12,6 +12,13 @@ export const HelpBtn = styled.div`
   bottom: 30px;
   right: 30px;
   border-radius: 50%;
+  @media (max-width:320px) {
+    bottom:15px;
+    right: 15px;
+    padding: 10px;
+    width: 25px;
+    height: 25px;
+  }
   > img {
     background-color: transparent;
   }
@@ -45,6 +52,7 @@ export const Panel = styled(motion.div)`
     bottom: 0;
   }
 `;
+
 export const Header = styled.div`
   width: 100%;
   height: 8%;
@@ -104,6 +112,7 @@ export const Header = styled.div`
     }
   }
 `;
+
 export const PanelOption = styled(motion.div)`
   padding: 20% 5% 0 5%;
 
@@ -123,7 +132,6 @@ export const Wrapper = styled(motion.div)`
   }
 `;
 
-// export const
 
 export const BoxContent = styled(motion.div)`
   height: fit-content;
@@ -240,18 +248,20 @@ export const ListContent = styled(motion.ul)`
 
 export const Trigger = styled(motion.span)`
   width: fit-content;
-  @media (max-width:400px) {
-    width: 25vw;
-    height: 14vw;
-  }
   height: 30px;
   display: flex;
   align-items: center;
   position: fixed;
-  z-index: 99;
-  bottom: 15vh;
+  z-index: 300;
+  bottom: 100px;
   padding: 5px;
   right: 30px;
+  @media (max-width:320px) {
+    right: 15px;
+    bottom: 70px;
+    padding: 2px;
+    font-size: 12px;
+  }
   background-color: #ffff;
   border-radius: 10px;
   cursor: pointer;
