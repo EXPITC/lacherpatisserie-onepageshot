@@ -82,7 +82,7 @@ function Slideshow({ open }: { open: Boolean }) {
           <motion.h1 variants={textVariant}>
             2022 Father's Day Edition - Black Forest
           </motion.h1>
-          <a href='/'>
+          <a href='https://www.lacherpatisserie.com/products/2022-fathers-day-edition-black-forest'>
             <motion.button variants={buttonVariant}>
               1Day Preorder, by 2pm
             </motion.button>

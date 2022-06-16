@@ -183,13 +183,14 @@ function AboutAndReview() {
             (No dine-in/walk-in)
             <br /> Mon - Sun, 11am - 6pm
           </motion.p>
-          <Link to='/'>
+          <Link to='https://www.lacherpatisserie.com/pages/how-to-find-our-store'>
             <motion.button
               variants={buttonVariant}
+              whileHover='hover'
               onViewportEnter={() => controls.start('button')}
               className={style.btnPickup}
             >
-              Pickup Location
+              <p>Pickup Location</p>
             </motion.button>
           </Link>
         </motion.div>
@@ -229,6 +230,8 @@ function AboutAndReview() {
               );
             })}
         </div>
+
+        {/* controller */}
         <motion.ul
           className={style.controller}
           variants={controllerVariant}

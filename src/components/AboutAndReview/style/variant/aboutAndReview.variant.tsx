@@ -135,6 +135,10 @@ export const buttonVariant = {
     opacity: 1,
     scale: 1,
   },
+  hover: {
+    opacity: 0.6,
+    textDecoration:'underline'
+  }
 };
 
 // ----Review Section

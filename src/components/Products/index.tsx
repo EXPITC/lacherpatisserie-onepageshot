@@ -25,7 +25,7 @@ const data = [
   },
   {
     id: 2,
-    url: '',
+    url: 'https://www.lacherpatisserie.com/collections/individual-dessert',
     img: 'https://cdn.shopify.com/s/files/1/0040/2305/8561/collections/individual-dessert_600x.jpg',
     h1: 'Individual Desert',
     variant: gridContentIVariant,
@@ -33,7 +33,7 @@ const data = [
   },
   {
     id: 3,
-    url: '',
+    url: 'https://www.lacherpatisserie.com/collections/limited-edition',
     img: 'https://cdn.shopify.com/s/files/1/0040/2305/8561/collections/limited-edition_600x.jpg',
     h1: 'Limited Edition',
     variant: gridContentIIVariant,
@@ -41,7 +41,7 @@ const data = [
   },
   {
     id: 4,
-    url: '',
+    url: 'https://www.lacherpatisserie.com/collections/add-ons',
     img: 'https://cdn.shopify.com/s/files/1/0040/2305/8561/collections/add-ons_600x.jpg',
     h1: 'Add-Ons',
     variant: gridContentIIVariant,
