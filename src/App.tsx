@@ -33,6 +33,7 @@ function App() {
               opacity: 0
             }}
           />
+          <Help/>
           <div
             style={{
               position: open ? 'fixed' : 'inherit',
@@ -46,7 +47,7 @@ function App() {
                 {/* <Route path="invoices" element={<Invoices />} /> */}
               </Route>
             </Routes>
-            <Help/>
+            
             <Footer />
           </div>
         </div>

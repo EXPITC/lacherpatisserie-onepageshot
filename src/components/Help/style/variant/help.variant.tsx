@@ -1,4 +1,3 @@
-
 export const hoverVariant = {
   hover: {
     opacity: 1,
@@ -7,19 +6,20 @@ export const hoverVariant = {
   },
 };
 
-export const exitVariant = {
-  rest: {
-    width: '35px',
-    height: '35px',
-    scale: 0,
-    border: '1px solid red',
-  },
-  hover: {
-    width: '35px',
-    height: '35px',
-    scale: 1,
-  },
+export const exitVariant =  {
+    rest: {
+      width: '35px',
+      height: '35px',
+      scale: 0,
+      border: '1px solid red',
+    },
+    hover: {
+      width: '35px',
+      height: '35px',
+      scale: 1,
+    },
 };
+
 export const exitParentVariant = {
   rest: {
     transition: {
@@ -67,6 +67,7 @@ export const panelVariant = {
     y: '100vh',
   },
 };
+
 export const listVariant = {
   view: {
     transition: {
@@ -75,6 +76,7 @@ export const listVariant = {
     },
   },
 };
+
 export const listChildVariant = {
   rest: {
     y: 100,
@@ -95,7 +97,7 @@ export const triggerVariant = {
     opacity: 1,
     x: 0,
     transition: {
-        delay: 2,
+      delay: 2,
     },
   },
 };

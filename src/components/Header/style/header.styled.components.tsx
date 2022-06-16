@@ -13,7 +13,7 @@ export const WrapperTop = styled.div`
   height: 80px;
   width: 100vw;
   justify-content: center;
-  padding: 10px 0 10px 0;
+  padding: 10px 0 11px 0;
   background-color: var(--header-background);
   z-index: 99;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -33,7 +33,7 @@ export const WrapperTop = styled.div`
 export const PersonChart = styled.div`
   position: absolute;
 
-  right: 3%;
+  right: 30px;
   & > * {
     transition: var(--transition-default);
     cursor: pointer;
@@ -67,7 +67,6 @@ export const List = styled(motion.ul)<{ laptop?: String }>`
   justify-content: center;
   align-items: center;
   width: fit-content;
-  /* border:1px solid blue; */
   padding: 0;
   /* @media ${laptopM} {
   } */
@@ -168,30 +167,27 @@ export const DropDown = styled(motion.ul)<{ textcenter?: String }>`
 //-------------------mobile navigation
 export const BarMobile = styled(motion.span)`
   position: absolute;
-  left: 30px;
+  left: 20px;
   top: 120px;
   z-index: 999;
   @media (max-width: 633px) {
     top: 140px;
-  }
+  };
   @media (max-width: 411px) {
     top: 160px;
-  }
+  };
   @media (max-width: 320px) {
     top: 180px;
-  }
+  };
 `;
 
 export const NavMobile = styled.div`
   background-color: var(--mobile-menu-background);
   margin: 0;
   padding: 0;
-  /* position: sticky; */
-  /* z-index: 99; */
   width: fit-content;
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-start; */
   justify-content: center;
   align-content: space-around;
   align-items: center;
@@ -199,24 +195,17 @@ export const NavMobile = styled.div`
   @media (min-width: 1011px) {
     display: none;
   }
-  /* @media (max-width: 700px) {
-    width: 60vw;
-  } */
 `;
 
 export const Panel = styled(motion.div)`
   background-color: var(--sale-color);
   flex: 1;
-  max-width: 40vw;
+  max-width: 330px;
   opacity: 0;
-  @media (max-width: 700px) {
-    max-width: 60vw;
+  @media (max-width: 411px) {
+    max-width: 220px;
   }
-  /* @media (){
-    
-  } */
-  /* overflow: scroll; */
-  /* scroll-behavior: smooth; */
+
   > * {
     margin: 0;
     padding: 0;
@@ -238,17 +227,18 @@ export const ListNavMobile = styled(motion.ul)`
   & li {
     /* and this */
     position: sticky;
-    padding: 0 1vw 0 3vw;
+    padding: 0 5px 0 30px;
+    /* 330px */
     display: flex;
     align-items: center;
     justify-content: space-between;
     border: 1px solid black;
-    width: 35vw;
-    @media (max-width: 700px) {
-      padding: 0 3vw 0 5vw;
-      width: 50vw;
+    width: 280px;
+    text-align: left;
+    @media (max-width: 411px) {
+      width: 170px;
     }
-    height: 50px;
+    height: 51px;
     border: none;
     border-bottom: 1px solid var(--color-scheme-dark-background);
     :first-child {
@@ -281,7 +271,6 @@ export const ListNavMobile = styled(motion.ul)`
 
 export const DropLeft = styled(motion.ul)`
   background-color: var(--sale-color);
-  /* opacity: 0.5; */
   top: 0;
   padding-top: 40px;
   height: 100vh;
