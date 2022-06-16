@@ -18,7 +18,7 @@ export const WrapperTop = styled.div`
   z-index: 99;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  > img {
+  > a > img {
     width: 160px;
     position: relative;
     transition: var(--transition-default);
@@ -32,8 +32,8 @@ export const WrapperTop = styled.div`
 // person & chart on the left
 export const PersonChart = styled.div`
   position: absolute;
-
   right: 30px;
+
   & > * {
     transition: var(--transition-default);
     cursor: pointer;
@@ -41,17 +41,21 @@ export const PersonChart = styled.div`
       opacity: 0.6;
     }
   }
-  & div {
+  & a {
     margin-left: 15px;
     display: inline;
   }
-  & p {
-    padding-left: 5px;
-    display: inline;
+  > a {
+    color: inherit;
+    text-decoration: none;
+    > p {
+      padding-left: 5px;
+      display: inline;
+    }
   }
   @media (max-width: 1010px) {
     font-size: 20px;
-    & p,
+    > a > p,
     > :first-child {
       display: none;
     }
@@ -68,8 +72,7 @@ export const List = styled(motion.ul)<{ laptop?: String }>`
   align-items: center;
   width: fit-content;
   padding: 0;
-  /* @media ${laptopM} {
-  } */
+
   > li {
     list-style: none;
     margin: 0 15px;
@@ -77,10 +80,8 @@ export const List = styled(motion.ul)<{ laptop?: String }>`
     @media ${laptopM} {
       width: fit-content;
       margin: 0 0.9vw;
-      /* border:1px solid red; */
     }
     @media (max-width: 1060px) {
-      /* border:1px solid blue; */
       margin: 0 0.5vw;
     }
     @media (max-width: 1010px) {
@@ -172,13 +173,13 @@ export const BarMobile = styled(motion.span)`
   z-index: 999;
   @media (max-width: 633px) {
     top: 140px;
-  };
+  }
   @media (max-width: 411px) {
     top: 160px;
-  };
+  }
   @media (max-width: 320px) {
     top: 180px;
-  };
+  } ;
 `;
 
 export const NavMobile = styled.div`
@@ -228,7 +229,6 @@ export const ListNavMobile = styled(motion.ul)`
     /* and this */
     position: sticky;
     padding: 0 5px 0 30px;
-    /* 330px */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -274,20 +274,19 @@ export const DropLeft = styled(motion.ul)`
   top: 0;
   padding-top: 40px;
   height: 100vh;
-  width: 40vw;
+  width: 330px;
   overflow: hidden;
-  @media (max-width: 700px) {
-    width: 60vw;
+  @media (max-width: 411px) {
+    max-width: 220px;
   }
   position: fixed;
   & li {
-    padding: 0 1vw 0 3vw;
+    padding: 0 5px 0 30px;
     display: flex;
     align-items: center;
-    width: 35vw;
-    @media (max-width: 700px) {
-      padding: 0 2vw 0 6vw;
-      width: 50vw;
+    width: 280px;
+    @media (max-width: 411px) {
+      width: 170px;
     }
     height: 50px;
     border: none;
@@ -339,6 +338,6 @@ export const Brand = styled(motion.div)`
     color: inherit;
     * > {
       font-size: 5px;
-    } 
+    }
   }
 `;

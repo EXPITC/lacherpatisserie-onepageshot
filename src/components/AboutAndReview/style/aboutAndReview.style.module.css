@@ -1,6 +1,5 @@
 .aboutAndReview {
   height: fit-content;
-  /* border: 1px solid orange; */
   background-color: var(--page-background);
   width: 100vw;
 }
@@ -44,10 +43,12 @@ p {
 .btnPickup {
   border: none;
   margin: 20px;
-  padding: 12px 40px;
+  padding: 15px 40px;
+  font-size: 16px;
   color: var(--button-text-color);
   background-color: var(--button-background-color);
 }
+
 @media (min-width: 700px) {
   .aboutAndReview {
     display: flex;
@@ -78,8 +79,8 @@ p {
     margin-top: 20px;
   }
   .btnPickup {
-    padding: 15px 70px;
-    font-size: normal;
+    padding: 15px 40px;
+    font-size: 16px;
     line-height: 22px;
   }
 }
@@ -102,7 +103,7 @@ p {
   height: auto;
 }
 .reviewSection > h1 {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   font-size: var(--heading-font-size);
   font-family: var(--header-font-stack);
   font-weight: var(--header-font-weight);
@@ -112,17 +113,26 @@ p {
 }
 .review {
   text-align: center;
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
 }
 .review > p {
+  margin: 0;
   position: relative;
   font-family: var(--body-font-stack);
   font-weight: lighter;
   font-style: var(--body-font-style);
   font-size: var(--body-font-size);
   line-height: 30px;
+  border: 1px solid red;
 }
 .review > p:last-child {
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  height: fit-content;
   font-weight: 500;
 }
 .controller {
@@ -142,4 +152,18 @@ p {
   width: 5px;
   border: none;
   border-radius: 50%;
+}
+
+@media (max-width:420px) {
+  .reviewSection{
+    padding: 0;
+  }
+  .review {
+    border:1px solid red;
+    width: 90vw;
+    height: 400px;
+  }
+  .review > p {
+    height: fit-content;
+  }
 }

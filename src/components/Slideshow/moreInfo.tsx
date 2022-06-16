@@ -87,7 +87,7 @@ function MoreInfoTablet() {
         variants={moreContentTabletVariant}
         animate={current === 0 ? enter : leave}
       >
-        <a href='/'>
+        <a href='https://www.lacherpatisserie.com/pages/delivery'>
           <FontAwesomeIcon icon={faTruck} fontSize={'20px'} />
           <div>
             <h4>Delivery to PJ/KL (within 50km)</h4>
@@ -103,7 +103,7 @@ function MoreInfoTablet() {
         variants={moreContentTabletVariant}
         animate={current === 1 ? enter : leave}
       >
-        <a href='/'>
+        <a href='https://www.lacherpatisserie.com/collections/all'>
           <FontAwesomeIcon icon={faFaceSmile} fontSize={'20px'} />
           <div>
             <h4>Preorder Basis</h4>
@@ -119,7 +119,7 @@ function MoreInfoTablet() {
         variants={moreContentTabletVariant}
         animate={current === 2 ? enter : leave}
       >
-        <a href='www.google.com'>
+        <a href='/'>
           <FontAwesomeIcon icon={faHeart} fontSize={'20px'} />
           <div>
             <h4>Finest Ingredients</h4>
@@ -135,7 +135,7 @@ function MoreInfoTablet() {
         variants={moreContentTabletVariant}
         animate={current === 3 ? enter : leave}
       >
-        <a href='/'>
+        <a href='https://www.lacherpatisserie.com/pages/about-us'>
           <FontAwesomeIcon icon={faAward} fontSize={'20px'} />
           <div>
             <h4>Award Winning Chef</h4>
@@ -156,7 +156,7 @@ function MoreInfoDefault() {
       onViewportEnter={() => controls.start(['viewMoreI', 'viewMoreII'])}
     >
       <motion.li variants={moreContentIIVariant({ y: true })}>
-        <a href='/'>
+        <a href='https://www.lacherpatisserie.com/pages/delivery'>
           <FontAwesomeIcon icon={faTruck} fontSize={'20px'} />
           <div>
             <h4>Delivery to PJ/KL (within 50km)</h4>
@@ -165,7 +165,7 @@ function MoreInfoDefault() {
         </a>
       </motion.li>
       <motion.li variants={moreContentIVariant}>
-        <a href='/'>
+        <a href='https://www.lacherpatisserie.com/collections/all'>
           <FontAwesomeIcon icon={faFaceSmile} fontSize={'20px'} />
           <div>
             <h4>Preorder Basis</h4>
@@ -174,7 +174,7 @@ function MoreInfoDefault() {
         </a>
       </motion.li>
       <motion.li variants={moreContentIVariant}>
-        <a href='www.google.com'>
+        <a href='/'>
           <FontAwesomeIcon icon={faHeart} fontSize={'20px'} />
           <div>
             <h4>Finest Ingredients</h4>
@@ -183,7 +183,7 @@ function MoreInfoDefault() {
         </a>
       </motion.li>
       <motion.li variants={moreContentIIVariant({})}>
-        <a href='/'>
+        <a href='https://www.lacherpatisserie.com/pages/about-us'>
           <FontAwesomeIcon icon={faAward} fontSize={'20px'} />
           <div>
             <h4>Award Winning Chef</h4>
