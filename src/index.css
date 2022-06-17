@@ -9,6 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--page-background);
   scroll-behavior: smooth;
+ 
 }
 
 code {

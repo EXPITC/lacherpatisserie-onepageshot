@@ -146,10 +146,10 @@ p {
 .controller > li > button {
   cursor: pointer;
   background-color: #aeb1b0;
-  height: 11px;
-  width: 5px;
+  height: 5px;
+  width: 11px;
   border: none;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 
 @media (max-width:420px) {

@@ -6,18 +6,17 @@ export const hoverVariant = {
   },
 };
 
-export const exitVariant =  {
-    rest: {
-      width: '35px',
-      height: '35px',
-      scale: 0,
-      border: '1px solid red',
-    },
-    hover: {
-      width: '35px',
-      height: '35px',
-      scale: 1,
-    },
+export const exitVariant = {
+  rest: {
+    width: '35px',
+    height: '35px',
+    scale: 0,
+  },
+  hover: {
+    width: '35px',
+    height: '35px',
+    scale: 1,
+  },
 };
 
 export const exitParentVariant = {
@@ -100,4 +99,26 @@ export const triggerVariant = {
       delay: 2,
     },
   },
+};
+
+export const panelTransitionVariant = ({x = true, h1 = false}:{x?:boolean , h1?:boolean}) => {
+  const duration = {
+      ease:'backOut',
+      duration:0.6
+    }
+  return {
+    rest: {
+      opacity: 0,
+      x: x ? -100 : 100,
+    },
+    view: {
+      opacity: 1,
+      x: 0,
+      transition: h1 ? duration : {}
+    },
+    exit: {
+      x: x ? -100 : 100,
+      opacity: 0,
+    },
+  };
 };

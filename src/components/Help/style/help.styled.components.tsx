@@ -113,9 +113,27 @@ export const Header = styled.div`
   }
 `;
 
+// wrapper for scroll
 export const PanelOption = styled(motion.div)`
   padding: 20% 5% 0 5%;
-
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(0,0,0,0.1);
+  }
+  ::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: rgba(0,0,0,0.2);
+  }
+  ::-webkit-scrollbar-thumb:hover{
+  	background: rgba(0,0,0,0.4);
+  }
+  ::-webkit-scrollbar-thumb:active{
+  	background: rgba(0,0,0,.9);
+  }
   width: 90%;
   height: 85%;
   overflow-x: hidden;
@@ -125,8 +143,7 @@ export const PanelOption = styled(motion.div)`
 
 export const Wrapper = styled(motion.div)`
   position: sticky;
-  /* height: fit-content; */
-  height: 110%;
+  padding-bottom: 10px;
   > h1 {
     font-size: 16px;
   }
@@ -147,6 +164,7 @@ export const BoxContent = styled(motion.div)`
   > div {
     cursor: pointer;
     > div {
+    
       border: 2px solid #ffff;
       background-color: #fff;
       border-radius: 4px;
@@ -154,11 +172,11 @@ export const BoxContent = styled(motion.div)`
       flex-direction: column;
       justify-content: space-evenly;
       align-items: center;
-      width: 160px;
+      width: 155px;
       box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
       height: 80px;
       @media (max-width: 412px) {
-        width: 42vw;
+        width: 41vw;
       }
       > p {
         width: fit-content;
@@ -204,12 +222,16 @@ export const ListContent = styled(motion.ul)`
   > li {
     cursor: pointer;
     display: flex;
+    flex-direction: column;
     width: 100%;
+    
     > div {
       display: flex;
       width: inherit;
       gap: 10px;
+      
       border-radius: 4px;
+      border: 1.5px solid #ffff;
       background-color: #fff;
       box-shadow: 0 0 0 1px #3f3f440d, 0 1px 3px #3f3f4426;
       height: fit-content;
@@ -219,6 +241,7 @@ export const ListContent = styled(motion.ul)`
         padding: 0px 10px 0 10px;
       }
       > span {
+        
         display: flex;
         align-items: center;
         justify-content: center;
@@ -229,7 +252,8 @@ export const ListContent = styled(motion.ul)`
         flex-direction: column;
         justify-content: center;
         gap: 2px;
-        width: calc(90%-10px);
+        position: relative;
+        width: 82%;
         > p {
           text-align: left;
           width: fit-content;

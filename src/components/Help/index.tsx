@@ -21,6 +21,7 @@ import {
   hoverVariant,
   listChildVariant,
   listVariant,
+  panelTransitionVariant,
   panelVariant,
   triggerVariant,
 } from './style/variant/help.variant';
@@ -139,9 +140,12 @@ function Help() {
             </div>
             <Wave />
           </Header>
+
+          {/* -----Panel content */}
           <PanelOption>
-            <Wrapper>
-              <h1>FAQ Category</h1>
+          <AnimatePresence>
+            <Wrapper key='panelOption' variants={panelTransitionVariant({})} exit='exit' initial='rest' animate='view'>
+            <motion.h1 variants={panelTransitionVariant({h1:true})} initial='rest' animate='view'>FAQ Category</motion.h1>
               <BoxContent
                 variants={boxParentVariant}
                 initial='rest'
@@ -181,7 +185,7 @@ function Help() {
                 </motion.div>
               </BoxContent>
 
-              <h1>Popular Questions</h1>
+              <motion.h1 variants={panelTransitionVariant({h1:true})} initial='rest' animate='view'>Popular Questions</motion.h1>
               <ListContent variants={listVariant} initial='rest' animate='view'>
                 {List.map(({ color, title, type }) => {
                   return (
@@ -201,7 +205,8 @@ function Help() {
                   );
                 })}
               </ListContent>
-            </Wrapper>
+              </Wrapper>
+              </AnimatePresence>
           </PanelOption>
         </Panel>
       ) : (
